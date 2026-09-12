@@ -1,6 +1,21 @@
 import type { Dictionary } from "./types";
 
 export const en = {
+  shell: {
+    skipToContent: "Skip to content",
+    homeLabel: "Nordren – home",
+    primaryNavigation: "Main navigation",
+    footerNavigation: "Footer navigation",
+    menu: "Menu",
+    navigation: {
+      home: "Home",
+      services: "Services",
+      pricing: "Pricing",
+      about: "About",
+      contact: "Contact",
+      quote: "Request a quote",
+    },
+  },
   placeholder: "This page is under development. Content and features will be added later.",
   languageSwitcher: {
     label: "Choose language",

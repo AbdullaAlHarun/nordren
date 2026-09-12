@@ -1,6 +1,21 @@
 import type { Dictionary } from "./types";
 
 export const nb = {
+  shell: {
+    skipToContent: "Hopp til innhold",
+    homeLabel: "Nordren – forsiden",
+    primaryNavigation: "Hovedmeny",
+    footerNavigation: "Navigasjon i bunntekst",
+    menu: "Meny",
+    navigation: {
+      home: "Forside",
+      services: "Tjenester",
+      pricing: "Priser",
+      about: "Om oss",
+      contact: "Kontakt",
+      quote: "Be om tilbud",
+    },
+  },
   placeholder: "Denne siden er under utvikling. Innhold og funksjoner kommer senere.",
   languageSwitcher: {
     label: "Velg språk",
