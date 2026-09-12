@@ -1,6 +1,6 @@
 ﻿# Nordren
 
-Next.js App Router, React, TypeScript, and Tailwind CSS. This increment contains bilingual routes and typed placeholder content, not the finished website.
+Next.js App Router, React, TypeScript, and Tailwind CSS. The bilingual homepage and shared shell are implemented; other pages remain placeholders.
 
 ## Development and verification
 
@@ -71,4 +71,14 @@ Subtle separators are decorative, not control boundaries. Focus uses a white inn
 
 For UI verification, check both languages at narrow and intermediate widths, keyboard activation of the disclosure, closed-menu tab order, skip-link focus, text resizing, reduced motion, and language destinations. Automated checks do not replace screen-reader and real-device review.
 
-Forms, email delivery, business facts, homepage sections, detailed page designs, and launch SEO remain outside this increment.
+## Homepage
+
+Both homepage routes render `components/home/home-page.tsx` inside the existing SiteShell. Hero, ServicesIntro, ServicePrinciples, Process, and QuoteCTA are server components with content from the typed `home` entries in the nb/en dictionaries. The route map supplies every CTA destination. All four service links currently lead to the localized services overview.
+
+`components/home/home.module.css` scopes the homepage layout without changing the header, footer, global tokens, or placeholder pages. Mobile uses a shallow photography reserve, full-width actions on small phones, and numbered process rows; wider screens use asymmetric columns and a horizontal process. There are no new animations, dependencies, or client components.
+
+The hero's empty sage area is an explicit photography reserve, hidden from assistive technology because it conveys no service information. Replace it with approved authentic photography and meaningful alt text in a later increment. No remote images are requested.
+
+Copy describes the approved service categories, service principles, and enquiry process. Business-owner review of wording remains necessary. No pricing, response time, location, review, certification, or guarantee has been invented. Quote and contact CTAs still lead to placeholder pages; forms and email delivery remain future work.
+
+Localized homepage titles/descriptions are updated. The existing noindex policy remains until the website and enquiry flow are approved for launch; configure the real production origin before enabling indexing.

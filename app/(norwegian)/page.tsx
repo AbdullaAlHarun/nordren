@@ -1,8 +1,8 @@
-import { FoundationPage } from "@/components/foundation-page";
+import { HomePage } from "@/components/home/home-page";
 import { getPageMetadata } from "@/lib/metadata";
 
 export const metadata = getPageMetadata("home", "nb");
 
 export default function Page() {
-  return <FoundationPage locale="nb" page="home" />;
+  return <HomePage locale="nb" />;
 }
