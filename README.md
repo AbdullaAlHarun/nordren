@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# Nordren
 
-## Getting Started
+Next.js App Router, React, TypeScript, and Tailwind CSS. This increment contains bilingual routes and typed placeholder content, not the finished website.
 
-First, run the development server:
+## Development and verification
 
-```bash
+```sh
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run lint
+npx next typegen
+npx tsc --noEmit
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Generate route types before standalone TypeScript checking on a fresh checkout or after moving routes. The production build also generates route types. Geist Sans uses next/font/google; a fresh build may need network access to download the font.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Languages and routes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Norwegian Bokmål (nb) is the default. English (en) is secondary. There is no browser-language detection, automatic redirect, or i18n library.
 
-## Learn More
+| Page | Norwegian | English |
+| --- | --- | --- |
+| Home | / | /en |
+| Services | /tjenester | /en/services |
+| Pricing | /priser | /en/pricing |
+| About | /om-oss | /en/about |
+| Contact | /kontakt | /en/contact |
+| Quote | /tilbud | /en/quote |
 
-To learn more about Next.js, take a look at the following resources:
+`app/(norwegian)/layout.tsx` and `app/(english)/layout.tsx` are separate root layouts. Both reuse `components/document.tsx`, which renders the server-side document language and shared font. There is intentionally no top-level app/layout.tsx.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Switching languages loads a new document and does not preserve in-memory form state. `components/language-switcher.tsx` uses ordinary links and equivalent-page URLs in `lib/i18n/routes.ts`; it needs no client JavaScript.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Route files select a page ID and locale. `components/foundation-page.tsx` renders the shared placeholder presentation. `content/types.ts` defines the dictionary contract; `content/nb.ts` and `content/en.ts` provide all page content and language labels. These are consumed by server components; avoid importing the full dictionaries into future client components.
 
-## Deploy on Vercel
+To add a page, extend PageId, the route map, both dictionaries, and the two thin route entries. TypeScript checks completeness of the route map and dictionaries.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Metadata and domain configuration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`lib/metadata.ts` generates localized titles and descriptions. Development placeholders are deliberately noindex, follow; review this policy when approved real content replaces them.
+
+Set the server-side environment variable `SITE_URL` to the approved production origin when known. Do not include credentials, a subpath, query, or fragment. Do not commit environment files.
+
+Without SITE_URL, canonical and language-alternate tags are omitted. No production domain, localhost canonical, or preview-domain fallback is invented. With SITE_URL, each page receives its own canonical URL and reciprocal nb/en alternates from the route map. Invalid configuration fails explicitly. Because pages are prerendered, rebuild after changing SITE_URL.
+
+Forms, email delivery, business facts, final navigation, visual design, and launch SEO are outside this increment.
