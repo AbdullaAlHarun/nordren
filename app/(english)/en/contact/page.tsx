@@ -1,8 +1,8 @@
-import { FoundationPage } from "@/components/foundation-page";
+import { ContactPage } from "@/components/contact/contact-page";
 import { getPageMetadata } from "@/lib/metadata";
 
 export const metadata = getPageMetadata("contact", "en");
 
 export default function Page() {
-  return <FoundationPage locale="en" page="contact" />;
+  return <ContactPage locale="en" />;
 }

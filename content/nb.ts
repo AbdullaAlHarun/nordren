@@ -1,6 +1,53 @@
 import type { Dictionary } from "./types";
 
 export const nb = {
+  contact: {
+    intro: {
+      eyebrow: "Kontakt",
+      heading: "La oss snakke om renholdet du trenger",
+      description: "Har du spørsmål om renhold til hjemmet eller arbeidsplassen? Her finner du veien videre.",
+      primaryAction: "Be om tilbud",
+    },
+    options: {
+      eyebrow: "Start med behovet ditt",
+      heading: "Et tilbud eller et spørsmål?",
+      quote: {
+        heading: "Be om tilbud",
+        description: "For deg som vet at du ønsker renhold og kan beskrive oppdraget.",
+        action: "Gå til tilbudssiden",
+      },
+      enquiry: {
+        heading: "Generelle spørsmål",
+        description: "For deg som har spørsmål om tjenestene eller er usikker på hva slags renhold som passer.",
+        action: "Se kontaktopplysninger",
+      },
+    },
+    guidance: {
+      eyebrow: "Nyttig å ha med",
+      heading: "Gi oss et bilde av behovet",
+      description: "Ta gjerne med det som er relevant for deg. Du trenger ikke ha alle detaljene klare.",
+      items: [
+        { id: "space", title: "Stedet og typen renhold", description: "Fortell om det gjelder et hjem eller en arbeidsplass, og hva slags rengjøring du ser for deg." },
+        { id: "size", title: "Omtrentlig størrelse", description: "Areal og antall rom kan være nyttig, gjerne med litt informasjon om kjøkken og bad der det er relevant." },
+        { id: "timing", title: "Hyppighet og ønsket tidspunkt", description: "Nevn om du ønsker hjelp én gang eller regelmessig, og om du har en ønsket dato eller periode." },
+        { id: "attention", title: "Det du vil prioritere", description: "Beskriv gjerne områder eller oppgaver som trenger ekstra oppmerksomhet, og eventuelle særlige ønsker." },
+        { id: "access", title: "Praktiske hensyn", description: "Nevn gjerne forhold ved adkomsten eller stedet som kan påvirke arbeidet." },
+      ],
+    },
+    business: {
+      eyebrow: "Kontakt- og virksomhetsopplysninger",
+      heading: "Kontaktinformasjon og virksomhetsopplysninger",
+      pending: "Verifiserte kontakt- og virksomhetsopplysninger publiseres her før lansering. Det er foreløpig ikke mulig å sende inn henvendelser eller tilbudsforespørsler på nettstedet.",
+      details: [],
+    },
+    quote: {
+      eyebrow: "Neste steg",
+      heading: "Har du allerede oversikt over behovet?",
+      description: "Gå videre til tilbudssiden, eller se nærmere på tjenestene våre.",
+      primaryAction: "Be om tilbud",
+      secondaryAction: "Se våre tjenester",
+    },
+  },
   pricing: {
     intro: {
       eyebrow: "Priser",
@@ -285,7 +332,7 @@ export const nb = {
     services: { heading: "Tjenester", title: "Renholdstjenester | Nordren", description: "Utforsk hjemmerengjøring, flyttevask, kontorrengjøring og grundig rengjøring. Beskriv behovet ditt, så avklarer vi omfanget før et tilbud." },
     pricing: { heading: "Priser", title: "Priser | Nordren", description: "Se hva som påvirker et tilbud på renhold, hvilke opplysninger som er nyttige, og hvordan vi avklarer omfanget før arbeidet avtales." },
     about: { heading: "Om oss", title: "Om oss | Nordren", description: "Les om Nordrens tilnærming til renhold: tydelig kommunikasjon, respekt for hjem og arbeidsplasser og et avklart omfang før oppdraget." },
-    contact: { heading: "Kontakt", title: "Kontakt | Nordren", description: "Kontaktinformasjon for Nordren kommer her." },
+    contact: { heading: "Kontakt", title: "Kontakt | Nordren", description: "Forbered en henvendelse om renhold til Nordren. Se hvilke opplysninger som er nyttige, og hvordan behov og praktiske detaljer avklares." },
     quote: { heading: "Be om tilbud", title: "Be om tilbud | Nordren", description: "Her kommer muligheten til å sende en tilbudsforespørsel til Nordren." },
   },
 } satisfies Dictionary;

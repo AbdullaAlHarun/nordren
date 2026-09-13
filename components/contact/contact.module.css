@@ -1,0 +1,21 @@
+.options > div {
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.options > div:first-child {
+  border-color: var(--border);
+}
+
+.options p {
+  max-width: 55ch;
+  margin-block: var(--space-3);
+  color: var(--text-muted);
+}
+
+.options a {
+  padding-inline: 0;
+  justify-content: flex-start;
+  text-align: start;
+  color: var(--brand-primary);
+}

@@ -1,6 +1,53 @@
 import type { Dictionary } from "./types";
 
 export const en = {
+  contact: {
+    intro: {
+      eyebrow: "Contact",
+      heading: "Let’s talk about the cleaning you need",
+      description: "Have a question about cleaning for your home or workplace? Find the right place to start here.",
+      primaryAction: "Request a quote",
+    },
+    options: {
+      eyebrow: "Start with what you need",
+      heading: "A quote or a question?",
+      quote: {
+        heading: "Request a quote",
+        description: "For when you know you need cleaning and can describe the work.",
+        action: "Go to the quote page",
+      },
+      enquiry: {
+        heading: "General enquiries",
+        description: "For questions about our services or help understanding which type of cleaning fits your needs.",
+        action: "View contact details",
+      },
+    },
+    guidance: {
+      eyebrow: "Helpful details",
+      heading: "Help us understand your needs",
+      description: "Include whatever is relevant to you. You do not need to have every detail worked out.",
+      items: [
+        { id: "space", title: "The space and type of cleaning", description: "Let us know whether it is a home or workplace and what kind of cleaning you have in mind." },
+        { id: "size", title: "Approximate size", description: "The floor area and number of rooms can help, along with a little about kitchens and bathrooms where relevant." },
+        { id: "timing", title: "Frequency and preferred timing", description: "Mention whether you need a one-time clean or regular help, and any preferred date or period." },
+        { id: "attention", title: "Your priorities", description: "Describe any areas or tasks that need extra attention and any specific requests you would like to discuss." },
+        { id: "access", title: "Practical considerations", description: "Mention anything about access or the property that may affect the work." },
+      ],
+    },
+    business: {
+      eyebrow: "Contact and business details",
+      heading: "Contact information and business details",
+      pending: "Verified contact and business details will be published here before launch. The website cannot accept enquiries or quote requests yet.",
+      details: [],
+    },
+    quote: {
+      eyebrow: "The next step",
+      heading: "Already know what you need?",
+      description: "Visit the quote page or take a closer look at our services.",
+      primaryAction: "Request a quote",
+      secondaryAction: "View services",
+    },
+  },
   pricing: {
     intro: {
       eyebrow: "Pricing",
@@ -285,7 +332,7 @@ export const en = {
     services: { heading: "Services", title: "Cleaning services | Nordren", description: "Explore home cleaning, move-out cleaning, office cleaning and deep cleaning. Tell us what you need so we can clarify the scope before preparing a quote." },
     pricing: { heading: "Pricing", title: "Pricing | Nordren", description: "Learn what affects a cleaning quote, which details help us prepare it and how we clarify the scope before work is arranged." },
     about: { heading: "About us", title: "About us | Nordren", description: "Learn about Nordren’s approach to cleaning: clear communication, respect for homes and workplaces, and an agreed scope before work begins." },
-    contact: { heading: "Contact", title: "Contact | Nordren", description: "Contact information for Nordren will be available here." },
+    contact: { heading: "Contact", title: "Contact | Nordren", description: "Prepare a cleaning enquiry for Nordren. Learn which details are helpful and how we discuss your needs and practical arrangements." },
     quote: { heading: "Request a quote", title: "Request a quote | Nordren", description: "The option to send Nordren a quote request will be available here." },
   },
 } satisfies Dictionary;

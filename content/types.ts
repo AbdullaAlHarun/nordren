@@ -93,7 +93,26 @@ export type PricingContent = {
   quote: HomeContent["quote"];
 };
 
+export type ContactContent = {
+  intro: Omit<HomeContent["quote"], "secondaryAction">;
+  options: {
+    eyebrow: string;
+    heading: string;
+    quote: { heading: string; description: string; action: string };
+    enquiry: { heading: string; description: string; action: string };
+  };
+  guidance: HomeContent["principles"];
+  business: {
+    eyebrow: string;
+    heading: string;
+    pending: string;
+    details: readonly { id: string; label: string; value: string }[];
+  };
+  quote: HomeContent["quote"];
+};
+
 export type Dictionary = {
+  contact: ContactContent;
   pricing: PricingContent;
   about: AboutContent;
   services: ServicesContent;
