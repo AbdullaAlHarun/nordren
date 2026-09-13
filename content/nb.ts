@@ -1,6 +1,79 @@
 import type { Dictionary } from "./types";
 
 export const nb = {
+  services: {
+  "intro": {
+    "eyebrow": "Våre tjenester",
+    "heading": "Renhold for ulike behov",
+    "description": "Hva slags renhold trenger du? Omfanget avhenger av boligen eller arbeidsplassen, typen rengjøring og det som er viktig for deg. Her får du en oversikt over tjenestene våre.",
+    "primaryAction": "Be om tilbud",
+    "secondaryAction": "Kontakt oss"
+  },
+  "suitabilityLabel": "Kan passe for deg som",
+  "items": [
+    {
+      "id": "home",
+      "title": "Hjemmerengjøring",
+      "description": "Renhold av hjemmet med utgangspunkt i hvordan du bruker rommene. Vi avklarer hvilke områder du ønsker hjelp med, og hva du vil prioritere.",
+      "suitability": "ønsker hjelp med rengjøringen hjemme og vil avtale omfanget ut fra boligen og hverdagen din.",
+      "action": "Be om tilbud på hjemmerengjøring"
+    },
+    {
+      "id": "move-out",
+      "title": "Flyttevask",
+      "description": "Renhold av boligen i forbindelse med flytting. Boligens størrelse, tilstand og behov danner grunnlaget for å avklare oppdraget.",
+      "suitability": "skal flytte fra en bolig og trenger å avklare rengjøringen før overlevering.",
+      "action": "Be om tilbud på flyttevask"
+    },
+    {
+      "id": "office",
+      "title": "Kontorrengjøring",
+      "description": "Renhold av kontorer og arbeidsplasser med utgangspunkt i lokalene og hvordan de brukes. Vi går gjennom behov og praktiske hensyn sammen.",
+      "suitability": "har ansvar for et kontor eller en arbeidsplass og ønsker å diskutere renholdet av lokalene.",
+      "action": "Be om tilbud på kontorrengjøring"
+    },
+    {
+      "id": "deep",
+      "title": "Grundig rengjøring",
+      "description": "Mer omfattende rengjøring når enkelte rom eller områder trenger ekstra oppmerksomhet. Vi avklarer hva du ønsker å få gjort, før vi setter omfanget.",
+      "suitability": "opplever at den vanlige rengjøringen ikke dekker behovet, eller ønsker å prioritere bestemte områder.",
+      "action": "Be om tilbud på grundig rengjøring"
+    }
+  ],
+  "choosing": {
+    "heading": "Usikker på hvilken tjeneste som passer?",
+    "description": "Du trenger ikke velge på forhånd. Beskriv situasjonen din og hva du ønsker hjelp med, så kan vi avklare hvilken type renhold og hvilket omfang som passer før vi gir et tilbud.",
+    "action": "Beskriv behovet ditt"
+  },
+  "process": {
+    "eyebrow": "Slik fungerer en forespørsel",
+    "heading": "Fra behov til avtalt omfang",
+    "steps": [
+      {
+        "id": "request",
+        "title": "Beskriv stedet og behovet",
+        "description": "Ta med hva slags bolig eller lokale det gjelder, omtrent hvor stort det er, og hva du ønsker hjelp med."
+      },
+      {
+        "id": "clarify",
+        "title": "Vi går gjennom detaljene",
+        "description": "Vi avklarer prioriteringer og praktiske forhold, slik at det er tydelig hva tilbudet skal omfatte."
+      },
+      {
+        "id": "quote",
+        "title": "Vurder tilbudet",
+        "description": "Tilbudet bygger på omfanget vi har avklart. Gå gjennom det og ta opp eventuelle spørsmål før du bestemmer deg."
+      }
+    ]
+  },
+  "quote": {
+    "eyebrow": "Neste steg",
+    "heading": "La oss avklare renholdet ditt",
+    "description": "Send en forespørsel med utgangspunkt i behovet ditt, eller ta kontakt hvis du har spørsmål om tjenestene.",
+    "primaryAction": "Be om tilbud",
+    "secondaryAction": "Kontakt oss"
+  }
+},
   home: {
     hero: {
       eyebrow: "For hjem og arbeidsplasser",
@@ -74,7 +147,7 @@ export const nb = {
   },
   pages: {
     home: { heading: "Nordren", title: "Nordren | Renhold for hjem og arbeidsplasser", description: "Renhold for hjem og arbeidsplasser. Utforsk hjemmerengjøring, flyttevask, kontorrengjøring og grundig rengjøring hos Nordren." },
-    services: { heading: "Tjenester", title: "Tjenester | Nordren", description: "Informasjon om Nordrens renholdstjenester kommer her." },
+    services: { heading: "Tjenester", title: "Renholdstjenester | Nordren", description: "Utforsk hjemmerengjøring, flyttevask, kontorrengjøring og grundig rengjøring. Beskriv behovet ditt, så avklarer vi omfanget før et tilbud." },
     pricing: { heading: "Priser", title: "Priser | Nordren", description: "Prisinformasjon fra Nordren kommer her." },
     about: { heading: "Om oss", title: "Om oss | Nordren", description: "Informasjon om Nordren kommer her." },
     contact: { heading: "Kontakt", title: "Kontakt | Nordren", description: "Kontaktinformasjon for Nordren kommer her." },

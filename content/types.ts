@@ -48,7 +48,23 @@ export type HomeContent = {
   };
 };
 
+export type ServicesContent = {
+  intro: HomeContent["quote"];
+  suitabilityLabel: string;
+  items: readonly {
+    id: "home" | "move-out" | "office" | "deep";
+    title: string;
+    description: string;
+    suitability: string;
+    action: string;
+  }[];
+  choosing: { heading: string; description: string; action: string };
+  process: HomeContent["process"];
+  quote: HomeContent["quote"];
+};
+
 export type Dictionary = {
+  services: ServicesContent;
   home: HomeContent;
   placeholder: string;
   shell: {

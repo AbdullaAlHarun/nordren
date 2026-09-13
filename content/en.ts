@@ -1,6 +1,79 @@
 import type { Dictionary } from "./types";
 
 export const en = {
+  services: {
+  "intro": {
+    "eyebrow": "Our services",
+    "heading": "Cleaning for different needs",
+    "description": "The right scope depends on your home or workplace, the type of cleaning and what matters to you. Explore our services to find a starting point for your enquiry.",
+    "primaryAction": "Request a quote",
+    "secondaryAction": "Contact us"
+  },
+  "suitabilityLabel": "May suit you if",
+  "items": [
+    {
+      "id": "home",
+      "title": "Home cleaning",
+      "description": "Cleaning for your home, shaped around how you use your rooms. We discuss the areas you would like help with and what you want to prioritise.",
+      "suitability": "you would like help with cleaning at home and want to agree on a scope that reflects your space and daily life.",
+      "action": "Request a home cleaning quote"
+    },
+    {
+      "id": "move-out",
+      "title": "Move-out cleaning",
+      "description": "Cleaning a property when you move out. The size, condition and needs of the property provide the starting point for discussing the work.",
+      "suitability": "you are moving out and need to arrange cleaning before handing over the property.",
+      "action": "Request a move-out cleaning quote"
+    },
+    {
+      "id": "office",
+      "title": "Office cleaning",
+      "description": "Cleaning for offices and workplaces, taking into account the premises and how they are used. We discuss your needs and practical considerations together.",
+      "suitability": "you look after an office or workplace and would like to discuss cleaning for the premises.",
+      "action": "Request an office cleaning quote"
+    },
+    {
+      "id": "deep",
+      "title": "Deep cleaning",
+      "description": "More thorough cleaning when particular rooms or areas need extra attention. We discuss what you would like done before defining the scope.",
+      "suitability": "your usual cleaning does not cover your needs, or you would like to focus on specific areas.",
+      "action": "Request a deep cleaning quote"
+    }
+  ],
+  "choosing": {
+    "heading": "Not sure which service fits?",
+    "description": "You do not need to choose in advance. Describe your situation and what you would like help with. We can clarify the type and scope of cleaning before preparing a quote.",
+    "action": "Tell us what you need"
+  },
+  "process": {
+    "eyebrow": "What to expect from an enquiry",
+    "heading": "From your needs to an agreed scope",
+    "steps": [
+      {
+        "id": "request",
+        "title": "Describe the space and the work",
+        "description": "Tell us about the home or premises, its approximate size and the cleaning you have in mind."
+      },
+      {
+        "id": "clarify",
+        "title": "We work through the details",
+        "description": "We discuss priorities and practical considerations to establish what the quote should cover."
+      },
+      {
+        "id": "quote",
+        "title": "Consider the quote",
+        "description": "Your quote reflects the scope we have discussed. Review it and raise any questions before deciding."
+      }
+    ]
+  },
+  "quote": {
+    "eyebrow": "The next step",
+    "heading": "Let’s discuss your cleaning needs",
+    "description": "Start with an enquiry about the cleaning you have in mind, or contact us with questions about our services.",
+    "primaryAction": "Request a quote",
+    "secondaryAction": "Contact us"
+  }
+},
   home: {
     hero: {
       eyebrow: "For homes and workplaces",
@@ -74,7 +147,7 @@ export const en = {
   },
   pages: {
     home: { heading: "Nordren", title: "Nordren | Cleaning for homes and workplaces", description: "Cleaning for homes and workplaces. Explore home cleaning, move-out cleaning, office cleaning and deep cleaning with Nordren." },
-    services: { heading: "Services", title: "Services | Nordren", description: "Information about Nordren's cleaning services will be available here." },
+    services: { heading: "Services", title: "Cleaning services | Nordren", description: "Explore home cleaning, move-out cleaning, office cleaning and deep cleaning. Tell us what you need so we can clarify the scope before preparing a quote." },
     pricing: { heading: "Pricing", title: "Pricing | Nordren", description: "Pricing information from Nordren will be available here." },
     about: { heading: "About us", title: "About us | Nordren", description: "Information about Nordren will be available here." },
     contact: { heading: "Contact", title: "Contact | Nordren", description: "Contact information for Nordren will be available here." },
