@@ -1,8 +1,8 @@
-import { FoundationPage } from "@/components/foundation-page";
+import { QuotePage } from "@/components/quote/quote-page";
 import { getPageMetadata } from "@/lib/metadata";
 
 export const metadata = getPageMetadata("quote", "nb");
 
 export default function Page() {
-  return <FoundationPage locale="nb" page="quote" />;
+  return <QuotePage locale="nb" />;
 }

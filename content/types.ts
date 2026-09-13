@@ -1,5 +1,6 @@
 import type { Locale } from "@/lib/i18n/locales";
 import type { PageId } from "@/lib/i18n/routes";
+import type { QuoteField, QuoteError, serviceOptions, frequencyOptions } from "@/lib/quote-validation";
 
 export type PageContent = {
   heading: string;
@@ -111,7 +112,33 @@ export type ContactContent = {
   quote: HomeContent["quote"];
 };
 
+export type QuoteContent = {
+  intro: { eyebrow: string; heading: string; description: string };
+  form: {
+    heading: string;
+    requiredNote: string;
+    optional: string;
+    groups: { contact: string; job: string; details: string };
+    labels: Record<QuoteField, string>;
+    serviceOptions: Record<typeof serviceOptions[number], string>;
+    frequencyOptions: Record<typeof frequencyOptions[number], string>;
+    choose: string;
+    helpers: { details: string; timing: string };
+    expectation: string;
+    development: string;
+    noScript: string;
+    submit: string;
+    pending: string;
+    errorHeading: string;
+    errors: Record<QuoteError, string>;
+    unavailable: string;
+    failure: string;
+  };
+  help: { heading: string; contact: string; services: string };
+};
+
 export type Dictionary = {
+  quote: QuoteContent;
   contact: ContactContent;
   pricing: PricingContent;
   about: AboutContent;

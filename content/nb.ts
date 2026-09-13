@@ -1,6 +1,43 @@
 import type { Dictionary } from "./types";
 
 export const nb = {
+  quote: {
+    intro: {
+      eyebrow: "Be om tilbud",
+      heading: "Fortell oss hva du trenger",
+      description: "Beskriv det viktigste om renholdet du ønsker. Opplysningene gir et utgangspunkt for å forstå behovet og avklare omfanget.",
+    },
+    form: {
+      heading: "Om deg og oppdraget",
+      requiredNote: "Felt merket med * må fylles ut. Resten er valgfritt.",
+      optional: "valgfritt",
+      groups: { contact: "Kontaktopplysninger", job: "Renholdet du ønsker", details: "Mer om behovet" },
+      labels: {
+        name: "Navn", email: "E-post", phone: "Telefon", service: "Type renhold",
+        property: "Bolig eller arbeidsplass", size: "Omtrentlig størrelse i m²", rooms: "Antall rom",
+        location: "Postnummer, sted eller område", frequency: "Hvor ofte", timing: "Ønsket tidspunkt", details: "Hva vil du ha hjelp med?",
+      },
+      serviceOptions: { home: "Hjemmerengjøring", "move-out": "Flyttevask", office: "Kontorrengjøring", deep: "Grundig rengjøring", other: "Annet / usikker" },
+      frequencyOptions: { once: "Én gang", recurring: "Regelmessig", unsure: "Usikker" },
+      choose: "Velg et alternativ",
+      helpers: { timing: "Skriv gjerne en dato eller periode. Dette bekrefter ikke ledig kapasitet.", details: "Ta gjerne med oppgaver, prioriteringer og hensyn ved adkomst. Maks 3000 tegn." },
+      expectation: "En forespørsel er ikke en bestilling. Omfang og tidspunkt må bekreftes før arbeidet avtales.",
+      development: "Skjemaet er under utprøving. Opplysningene kontrolleres i nettleseren og på serveren, men lagres ikke og leveres ikke til Nordren. Bruk testopplysninger.",
+      noScript: "JavaScript må være aktivert for å prøve skjemaet. Ingen opplysninger er sendt.",
+      submit: "Send forespørsel",
+      pending: "Kontrollerer opplysningene …",
+      errorHeading: "Se over disse feltene",
+      errors: {
+        required: "Fyll ut dette feltet.", email: "Skriv en e-postadresse, for eksempel navn@domene.no.",
+        phone: "Skriv et telefonnummer med minst fem sifre. Landskode, mellomrom og parenteser kan brukes.",
+        number: "Skriv et positivt tall. Antall rom må være et heltall; areal kan ha opptil to desimaler.",
+        choice: "Velg eller skriv en gyldig verdi.", tooLong: "Teksten er for lang. Forkort innholdet i feltet.",
+      },
+      unavailable: "Ikke sendt ennå. Opplysningene er kontrollert, men innsending er ikke tilkoblet. Ingenting er levert eller lagret.",
+      failure: "Kontrollen kunne ikke fullføres. Forespørselen er ikke levert til Nordren. Opplysningene står fortsatt i skjemaet. Prøv igjen.",
+    },
+    help: { heading: "Usikker på hva du trenger?", contact: "Se kontaktsiden", services: "Utforsk tjenestene" },
+  },
   contact: {
     intro: {
       eyebrow: "Kontakt",
@@ -333,6 +370,6 @@ export const nb = {
     pricing: { heading: "Priser", title: "Priser | Nordren", description: "Se hva som påvirker et tilbud på renhold, hvilke opplysninger som er nyttige, og hvordan vi avklarer omfanget før arbeidet avtales." },
     about: { heading: "Om oss", title: "Om oss | Nordren", description: "Les om Nordrens tilnærming til renhold: tydelig kommunikasjon, respekt for hjem og arbeidsplasser og et avklart omfang før oppdraget." },
     contact: { heading: "Kontakt", title: "Kontakt | Nordren", description: "Forbered en henvendelse om renhold til Nordren. Se hvilke opplysninger som er nyttige, og hvordan behov og praktiske detaljer avklares." },
-    quote: { heading: "Be om tilbud", title: "Be om tilbud | Nordren", description: "Her kommer muligheten til å sende en tilbudsforespørsel til Nordren." },
+    quote: { heading: "Be om tilbud", title: "Be om tilbud | Nordren", description: "Beskriv renholdet du ønsker og de viktigste opplysningene om oppdraget. Tilbudsskjemaet er under utprøving; innsending er ikke tilkoblet ennå." },
   },
 } satisfies Dictionary;

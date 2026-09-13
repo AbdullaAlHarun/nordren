@@ -1,6 +1,43 @@
 import type { Dictionary } from "./types";
 
 export const en = {
+  quote: {
+    intro: {
+      eyebrow: "Request a quote",
+      heading: "Tell us what you need",
+      description: "Share the key details about the cleaning you have in mind. They provide a starting point for understanding your needs and discussing the scope.",
+    },
+    form: {
+      heading: "About you and the work",
+      requiredNote: "Fields marked * are required. Everything else is optional.",
+      optional: "optional",
+      groups: { contact: "Contact details", job: "Your cleaning needs", details: "A little more detail" },
+      labels: {
+        name: "Name", email: "Email", phone: "Phone number", service: "Type of cleaning",
+        property: "Home or workplace", size: "Approximate size in m²", rooms: "Number of rooms",
+        location: "Postcode, town or area", frequency: "Frequency", timing: "Preferred timing", details: "What would you like help with?",
+      },
+      serviceOptions: { home: "Home cleaning", "move-out": "Move-out cleaning", office: "Office cleaning", deep: "Deep cleaning", other: "Other / not sure" },
+      frequencyOptions: { once: "One-time", recurring: "Recurring", unsure: "Not sure" },
+      choose: "Choose an option",
+      helpers: { timing: "A date or a period is fine. This does not confirm availability.", details: "Include tasks, priorities and access considerations. Up to 3000 characters." },
+      expectation: "An enquiry is not a booking. Scope and timing still need to be confirmed before work is agreed.",
+      development: "This form is being tested. Details are checked in your browser and on the server, but are not stored or delivered to Nordren. Please use test information.",
+      noScript: "Enable JavaScript to try the form. No information has been sent.",
+      submit: "Send enquiry",
+      pending: "Checking your details …",
+      errorHeading: "Please check these fields",
+      errors: {
+        required: "Complete this field.", email: "Enter an email address, such as name@domain.com.",
+        phone: "Enter a phone number with at least five digits. Country codes, spaces and brackets are welcome.",
+        number: "Enter a positive number. Rooms must be a whole number; size can have up to two decimal places.",
+        choice: "Choose or enter a valid value.", tooLong: "This entry is too long. Please shorten it.",
+      },
+      unavailable: "Not sent yet. Your information passed validation, but delivery is not connected. Nothing was delivered or stored.",
+      failure: "The check could not be completed. Your enquiry has not been delivered to Nordren. Your entries are still in the form. Please try again.",
+    },
+    help: { heading: "Not sure what you need?", contact: "Visit the contact page", services: "Explore our services" },
+  },
   contact: {
     intro: {
       eyebrow: "Contact",
@@ -333,6 +370,6 @@ export const en = {
     pricing: { heading: "Pricing", title: "Pricing | Nordren", description: "Learn what affects a cleaning quote, which details help us prepare it and how we clarify the scope before work is arranged." },
     about: { heading: "About us", title: "About us | Nordren", description: "Learn about Nordren’s approach to cleaning: clear communication, respect for homes and workplaces, and an agreed scope before work begins." },
     contact: { heading: "Contact", title: "Contact | Nordren", description: "Prepare a cleaning enquiry for Nordren. Learn which details are helpful and how we discuss your needs and practical arrangements." },
-    quote: { heading: "Request a quote", title: "Request a quote | Nordren", description: "The option to send Nordren a quote request will be available here." },
+    quote: { heading: "Request a quote", title: "Request a quote | Nordren", description: "Describe the cleaning you need and share the key details about the work. The quote form is being tested; delivery is not connected yet." },
   },
 } satisfies Dictionary;
