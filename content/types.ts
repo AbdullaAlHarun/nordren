@@ -63,7 +63,25 @@ export type ServicesContent = {
   quote: HomeContent["quote"];
 };
 
+export type AboutContent = {
+  intro: HomeContent["quote"];
+  principles: HomeContent["principles"];
+  expectations: {
+    eyebrow: string;
+    heading: string;
+    steps: readonly [HomepageItem, HomepageItem, HomepageItem, HomepageItem];
+  };
+  transparency: {
+    eyebrow: string;
+    heading: string;
+    description: string;
+    details: string;
+  };
+  quote: HomeContent["quote"];
+};
+
 export type Dictionary = {
+  about: AboutContent;
   services: ServicesContent;
   home: HomeContent;
   placeholder: string;

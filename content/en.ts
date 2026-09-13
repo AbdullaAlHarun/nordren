@@ -1,6 +1,86 @@
 import type { Dictionary } from "./types";
 
 export const en = {
+  about: {
+  "intro": {
+    "eyebrow": "About Nordren",
+    "heading": "Cleaning starts with trust.",
+    "description": "Inviting a cleaning company into your home or workplace is a personal decision. We want clear communication, respect for your space and a shared understanding of the work to shape our relationship with you.",
+    "primaryAction": "Request a quote",
+    "secondaryAction": "Explore our services"
+  },
+  "principles": {
+    "eyebrow": "How we aim to work",
+    "heading": "Understanding comes first.",
+    "description": "These principles describe how we aim to approach both the conversation with you and the work you need help with.",
+    "items": [
+      {
+        "id": "communication",
+        "title": "Clear communication",
+        "description": "We aim to make it easy to understand what has been proposed, what has been agreed and which questions still need an answer."
+      },
+      {
+        "id": "care",
+        "title": "Care in the work",
+        "description": "Attention to the tasks and details within the agreed scope is our starting point for a thorough clean."
+      },
+      {
+        "id": "respect",
+        "title": "Respect for homes and workplaces",
+        "description": "Your home or workplace matters to the people who use it. We want to understand the considerations that are important in your space."
+      },
+      {
+        "id": "scope",
+        "title": "An agreed scope",
+        "description": "A shared understanding of the tasks provides a clearer basis for working together. Any changes should be discussed before becoming part of the job."
+      },
+      {
+        "id": "dialogue",
+        "title": "Straightforward dialogue",
+        "description": "There should be room to ask questions and explain your priorities. You do not need to know all the details of cleaning to get in touch."
+      }
+    ]
+  },
+  "expectations": {
+    "eyebrow": "From first contact to the work itself",
+    "heading": "An enquiry opens a conversation.",
+    "steps": [
+      {
+        "id": "need",
+        "title": "Tell us what you need",
+        "description": "Describe your home or workplace and the help you have in mind. It is fine if you are not yet sure which service fits."
+      },
+      {
+        "id": "scope",
+        "title": "We clarify the scope",
+        "description": "Together, we discuss the tasks, priorities and practical considerations that will inform the quote."
+      },
+      {
+        "id": "quote",
+        "title": "Consider your quote",
+        "description": "You receive a quote based on that discussion. Sending an enquiry or receiving a quote does not confirm a booking."
+      },
+      {
+        "id": "work",
+        "title": "The agreement guides the work",
+        "description": "Once you have accepted the quote and we have agreed on timing and practical details, the work is carried out according to the clarified scope."
+      }
+    ]
+  },
+  "transparency": {
+    "eyebrow": "Business transparency",
+    "heading": "Know who you are making an agreement with.",
+    "description": "Verified business details have not yet been published here.",
+    "details": "This section is reserved for the legal company name, organisation number, contact details and actual service area. Information about any registrations or insurance will only be added once confirmed."
+  },
+  "quote": {
+    "eyebrow": "Start a conversation",
+    "heading": "Tell us how we can help.",
+    "description": "Describe the cleaning you have in mind, or get in touch if you would like to discuss something before requesting a quote.",
+    "primaryAction": "Request a quote",
+    "secondaryAction": "Contact us"
+  }
+},
   services: {
   "intro": {
     "eyebrow": "Our services",
@@ -149,7 +229,7 @@ export const en = {
     home: { heading: "Nordren", title: "Nordren | Cleaning for homes and workplaces", description: "Cleaning for homes and workplaces. Explore home cleaning, move-out cleaning, office cleaning and deep cleaning with Nordren." },
     services: { heading: "Services", title: "Cleaning services | Nordren", description: "Explore home cleaning, move-out cleaning, office cleaning and deep cleaning. Tell us what you need so we can clarify the scope before preparing a quote." },
     pricing: { heading: "Pricing", title: "Pricing | Nordren", description: "Pricing information from Nordren will be available here." },
-    about: { heading: "About us", title: "About us | Nordren", description: "Information about Nordren will be available here." },
+    about: { heading: "About us", title: "About us | Nordren", description: "Learn about Nordren’s approach to cleaning: clear communication, respect for homes and workplaces, and an agreed scope before work begins." },
     contact: { heading: "Contact", title: "Contact | Nordren", description: "Contact information for Nordren will be available here." },
     quote: { heading: "Request a quote", title: "Request a quote | Nordren", description: "The option to send Nordren a quote request will be available here." },
   },

@@ -1,6 +1,86 @@
 import type { Dictionary } from "./types";
 
 export const nb = {
+  about: {
+  "intro": {
+    "eyebrow": "Om Nordren",
+    "heading": "Renhold handler også om tillit.",
+    "description": "Når du slipper et renholdsfirma inn i hjemmet eller på arbeidsplassen, betyr det noe hvordan du blir møtt. Vi ønsker at tydelig kommunikasjon, respekt for stedet og en felles forståelse av oppdraget skal prege samarbeidet.",
+    "primaryAction": "Be om tilbud",
+    "secondaryAction": "Se våre tjenester"
+  },
+  "principles": {
+    "eyebrow": "Slik ønsker vi å jobbe",
+    "heading": "Et godt samarbeid starter med forståelse.",
+    "description": "Disse prinsippene beskriver hvordan vi ønsker å møte deg og arbeidet du trenger hjelp med.",
+    "items": [
+      {
+        "id": "communication",
+        "title": "Tydelig kommunikasjon",
+        "description": "Vi ønsker å gjøre det lett å forstå hva som er foreslått, hva som er avklart, og hvilke spørsmål som fortsatt står åpne."
+      },
+      {
+        "id": "care",
+        "title": "Grundig arbeid",
+        "description": "Oppmerksomhet på oppgavene og detaljene i det avtalte arbeidet er utgangspunktet vårt for godt renhold."
+      },
+      {
+        "id": "respect",
+        "title": "Respekt for hjem og arbeidsplasser",
+        "description": "Hjemmet og arbeidsplassen din er rom andre bruker og er opptatt av. Vi ønsker å forstå hvilke hensyn som er viktige der."
+      },
+      {
+        "id": "scope",
+        "title": "Avtalt omfang",
+        "description": "En felles forståelse av oppgavene gir et tydeligere grunnlag for samarbeidet. Ønsker om endringer bør avklares før de blir en del av oppdraget."
+      },
+      {
+        "id": "dialogue",
+        "title": "Enkel dialog",
+        "description": "Det skal være rom for å stille spørsmål og forklare egne prioriteringer. Du trenger ikke kjenne alle detaljene om renhold for å ta kontakt."
+      }
+    ]
+  },
+  "expectations": {
+    "eyebrow": "Fra første kontakt til oppdrag",
+    "heading": "En forespørsel er starten på en dialog.",
+    "steps": [
+      {
+        "id": "need",
+        "title": "Du beskriver behovet",
+        "description": "Fortell om boligen eller arbeidsplassen og hva du ønsker hjelp med. Det er også greit å være usikker på hvilken tjeneste som passer."
+      },
+      {
+        "id": "scope",
+        "title": "Vi avklarer omfanget",
+        "description": "Sammen går vi gjennom aktuelle oppgaver, prioriteringer og praktiske hensyn som tilbudet skal bygge på."
+      },
+      {
+        "id": "quote",
+        "title": "Du tar stilling til tilbudet",
+        "description": "Du får et tilbud basert på avklaringene. En forespørsel eller et mottatt tilbud betyr ikke at et oppdrag er bestilt."
+      },
+      {
+        "id": "work",
+        "title": "Arbeidet følger avtalen",
+        "description": "Når du har akseptert tilbudet og vi har avtalt tidspunkt og praktiske detaljer, utføres arbeidet med utgangspunkt i det avklarte omfanget."
+      }
+    ]
+  },
+  "transparency": {
+    "eyebrow": "Åpenhet om virksomheten",
+    "heading": "Tydelig informasjon om hvem du avtaler med.",
+    "description": "Verifiserte virksomhetsopplysninger er ennå ikke publisert her.",
+    "details": "Denne delen er satt av til juridisk selskapsnavn, organisasjonsnummer, kontaktopplysninger og faktisk tjenesteområde. Eventuelle opplysninger om registreringer og forsikring legges bare til når de er bekreftet."
+  },
+  "quote": {
+    "eyebrow": "La oss starte dialogen",
+    "heading": "Fortell oss hva du trenger hjelp med.",
+    "description": "Beskriv renholdet du ønsker, eller ta kontakt hvis du vil avklare noe før du ber om et tilbud.",
+    "primaryAction": "Be om tilbud",
+    "secondaryAction": "Kontakt oss"
+  }
+},
   services: {
   "intro": {
     "eyebrow": "Våre tjenester",
@@ -149,7 +229,7 @@ export const nb = {
     home: { heading: "Nordren", title: "Nordren | Renhold for hjem og arbeidsplasser", description: "Renhold for hjem og arbeidsplasser. Utforsk hjemmerengjøring, flyttevask, kontorrengjøring og grundig rengjøring hos Nordren." },
     services: { heading: "Tjenester", title: "Renholdstjenester | Nordren", description: "Utforsk hjemmerengjøring, flyttevask, kontorrengjøring og grundig rengjøring. Beskriv behovet ditt, så avklarer vi omfanget før et tilbud." },
     pricing: { heading: "Priser", title: "Priser | Nordren", description: "Prisinformasjon fra Nordren kommer her." },
-    about: { heading: "Om oss", title: "Om oss | Nordren", description: "Informasjon om Nordren kommer her." },
+    about: { heading: "Om oss", title: "Om oss | Nordren", description: "Les om Nordrens tilnærming til renhold: tydelig kommunikasjon, respekt for hjem og arbeidsplasser og et avklart omfang før oppdraget." },
     contact: { heading: "Kontakt", title: "Kontakt | Nordren", description: "Kontaktinformasjon for Nordren kommer her." },
     quote: { heading: "Be om tilbud", title: "Be om tilbud | Nordren", description: "Her kommer muligheten til å sende en tilbudsforespørsel til Nordren." },
   },
