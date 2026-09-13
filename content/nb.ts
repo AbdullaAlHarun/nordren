@@ -1,6 +1,61 @@
 import type { Dictionary } from "./types";
 
 export const nb = {
+  pricing: {
+    intro: {
+      eyebrow: "Priser",
+      heading: "En pris tilpasset oppdraget",
+      description: "Behovet for renhold varierer fra sted til sted. Hos Nordren avklarer vi først hva du trenger hjelp med og omfanget av arbeidet, før vi gir deg et tilbud.",
+      primaryAction: "Be om tilbud",
+      secondaryAction: "Kontakt oss",
+    },
+    factors: {
+      eyebrow: "Grunnlaget for tilbudet",
+      heading: "Hva påvirker prisen?",
+      description: "Størrelsen er én del av bildet. Oppgavene, tilstanden og de praktiske forholdene er også med på å avgjøre hvor omfattende renholdet blir.",
+      items: [
+        { id: "type", title: "Type renhold", description: "Hjemmerengjøring, flyttevask, kontorrengjøring og grundig rengjøring kan innebære ulike oppgaver og ulikt tidsbruk." },
+        { id: "size", title: "Størrelse og rom", description: "Omtrentlig areal og antall rom gir et utgangspunkt. Fortell gjerne også hvor mange kjøkken og bad som skal rengjøres." },
+        { id: "condition", title: "Omfang og tilstand", description: "Hvilke flater som skal rengjøres, og hvor mye rengjøring de trenger, påvirker arbeidsmengden." },
+        { id: "frequency", title: "Hvor ofte du ønsker renhold", description: "Et enkeltoppdrag og regelmessig renhold kan ha ulikt omfang. Oppgi om du ønsker hjelp én gang eller over tid." },
+        { id: "priorities", title: "Særlige ønsker", description: "Områder som trenger ekstra oppmerksomhet, eller oppgaver du ønsker å prioritere, bør tas med når vi avklarer tilbudet." },
+        { id: "access", title: "Adkomst og tidspunkt", description: "Hvor stedet ligger, hvordan vi får tilgang, og når arbeidet kan gjøres, er praktiske forhold som kan påvirke planleggingen og omfanget." },
+      ],
+    },
+    process: {
+      eyebrow: "Fra forespørsel til tilbud",
+      heading: "Slik avklarer vi oppdraget",
+      steps: [
+        { id: "need", title: "Fortell hva du trenger", description: "Beskriv stedet og renholdet du ønsker. En forespørsel er starten på en dialog, ikke en bestilling eller avtale." },
+        { id: "scope", title: "Vi avklarer omfanget", description: "Sammen går vi gjennom oppgaver, prioriteringer og praktiske forhold som tilbudet skal bygge på." },
+        { id: "quote", title: "Du mottar et tilbud", description: "Du får et tilbud basert på det vi har avklart. Les gjennom det og ta opp eventuelle spørsmål før du bestemmer deg." },
+        { id: "agreement", title: "Vi avtaler arbeidet", description: "Arbeidet avtales først når tilbudet er akseptert og vi er enige om tidspunkt og praktiske detaljer." },
+      ],
+    },
+    transparency: {
+      eyebrow: "Et tydelig grunnlag",
+      heading: "Vit hva tilbudet omfatter",
+      description: "Tilbudet bør gjøre det avtalte omfanget tydelig før arbeidet avtales.",
+      details: "Hvilke rom, flater og oppgaver er med? Er det noe som ikke inngår, eller som fortsatt må avklares? Ta opp spørsmål og ønsker om endringer før dere blir enige om oppdraget.",
+    },
+    faq: {
+      eyebrow: "Spørsmål om pris",
+      heading: "Greit å vite før du spør",
+      items: [
+        { id: "price-list", question: "Hvorfor er det ingen standard prisliste?", answer: "Vi har ikke publisert en verifisert prisliste ennå. Renholdsbehov varierer, og et tilbud må ta utgangspunkt i oppgavene og forholdene på stedet." },
+        { id: "information", question: "Hva bør jeg oppgi for å få et tilbud?", answer: "Beskriv typen renhold, omtrentlig areal, antall rom og sted eller postnummer. Ta gjerne med ønsket tidspunkt, hvor ofte du ønsker renhold og områder som trenger særlig oppmerksomhet. Det er greit om ikke alle detaljer er klare ennå." },
+        { id: "recurring", question: "Vurderes regelmessig renhold annerledes enn et enkeltoppdrag?", answer: "Hyppigheten kan påvirke hvilke oppgaver som trengs ved hvert besøk, og dermed grunnlaget for tilbudet. Regelmessig renhold betyr ikke i seg selv at en bestemt rabatt eller pris gjelder." },
+        { id: "commitment", question: "Forplikter jeg meg ved å be om et tilbud?", answer: "En forespørsel oppretter ikke automatisk en bestilling eller avtale. Arbeidet avtales først etter at du har akseptert tilbudet og vi har avklart de praktiske detaljene." },
+      ],
+    },
+    quote: {
+      eyebrow: "Neste steg",
+      heading: "Fortell oss hva du trenger",
+      description: "Vi kan avklare omfanget og gi deg et tilbud.",
+      primaryAction: "Be om tilbud",
+      secondaryAction: "Kontakt oss",
+    },
+  },
   about: {
   "intro": {
     "eyebrow": "Om Nordren",
@@ -228,7 +283,7 @@ export const nb = {
   pages: {
     home: { heading: "Nordren", title: "Nordren | Renhold for hjem og arbeidsplasser", description: "Renhold for hjem og arbeidsplasser. Utforsk hjemmerengjøring, flyttevask, kontorrengjøring og grundig rengjøring hos Nordren." },
     services: { heading: "Tjenester", title: "Renholdstjenester | Nordren", description: "Utforsk hjemmerengjøring, flyttevask, kontorrengjøring og grundig rengjøring. Beskriv behovet ditt, så avklarer vi omfanget før et tilbud." },
-    pricing: { heading: "Priser", title: "Priser | Nordren", description: "Prisinformasjon fra Nordren kommer her." },
+    pricing: { heading: "Priser", title: "Priser | Nordren", description: "Se hva som påvirker et tilbud på renhold, hvilke opplysninger som er nyttige, og hvordan vi avklarer omfanget før arbeidet avtales." },
     about: { heading: "Om oss", title: "Om oss | Nordren", description: "Les om Nordrens tilnærming til renhold: tydelig kommunikasjon, respekt for hjem og arbeidsplasser og et avklart omfang før oppdraget." },
     contact: { heading: "Kontakt", title: "Kontakt | Nordren", description: "Kontaktinformasjon for Nordren kommer her." },
     quote: { heading: "Be om tilbud", title: "Be om tilbud | Nordren", description: "Her kommer muligheten til å sende en tilbudsforespørsel til Nordren." },

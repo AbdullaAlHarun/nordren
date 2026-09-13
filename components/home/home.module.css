@@ -258,6 +258,10 @@
     display: block;
   }
 
+  .fourSteps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .stepNumber {
     display: block;
     margin-block-end: var(--space-6);

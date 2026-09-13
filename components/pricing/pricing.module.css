@@ -1,0 +1,32 @@
+.faq details {
+  border-top: 1px solid var(--border-subtle);
+}
+
+.faq details:first-child {
+  border-color: var(--border);
+}
+
+.faq summary {
+  min-height: var(--target-size);
+  padding-block: var(--space-5);
+  font-size: 1.1875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+  list-style-position: inside;
+}
+
+.faq summary::marker {
+  color: var(--brand-primary);
+}
+
+.faq details[open] summary {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.faq p {
+  max-width: 55ch;
+  padding-block-end: var(--space-6);
+  color: var(--text-muted);
+}

@@ -80,7 +80,21 @@ export type AboutContent = {
   quote: HomeContent["quote"];
 };
 
+export type PricingContent = {
+  intro: HomeContent["quote"];
+  factors: HomeContent["principles"];
+  process: AboutContent["expectations"];
+  transparency: AboutContent["transparency"];
+  faq: {
+    eyebrow: string;
+    heading: string;
+    items: readonly { id: string; question: string; answer: string }[];
+  };
+  quote: HomeContent["quote"];
+};
+
 export type Dictionary = {
+  pricing: PricingContent;
   about: AboutContent;
   services: ServicesContent;
   home: HomeContent;

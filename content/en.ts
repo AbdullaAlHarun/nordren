@@ -1,6 +1,61 @@
 import type { Dictionary } from "./types";
 
 export const en = {
+  pricing: {
+    intro: {
+      eyebrow: "Pricing",
+      heading: "A price based on the work",
+      description: "Every space has different cleaning needs. At Nordren, we first discuss what you need and clarify the scope of the work before preparing a quote.",
+      primaryAction: "Request a quote",
+      secondaryAction: "Contact us",
+    },
+    factors: {
+      eyebrow: "The basis for your quote",
+      heading: "What affects the price?",
+      description: "Size is part of the picture. The tasks, the condition of the space and practical considerations also help determine how much work is involved.",
+      items: [
+        { id: "type", title: "Type of cleaning", description: "Home cleaning, move-out cleaning, office cleaning and deep cleaning can involve different tasks and take different amounts of time." },
+        { id: "size", title: "Size and rooms", description: "The approximate floor area and number of rooms provide a starting point. It also helps to know how many kitchens and bathrooms need cleaning." },
+        { id: "condition", title: "Scope and condition", description: "The surfaces to be cleaned and the attention they need affect the amount of work involved." },
+        { id: "frequency", title: "How often you need cleaning", description: "A one-time job and regular cleaning can involve different scopes. Let us know whether you need a single visit or ongoing help." },
+        { id: "priorities", title: "Specific requests", description: "Areas needing extra attention and tasks you would like to prioritise should be part of the discussion when we prepare your quote." },
+        { id: "access", title: "Access and timing", description: "The location, access to the property and when the work can take place are practical factors that can affect planning and the scope of the job." },
+      ],
+    },
+    process: {
+      eyebrow: "From enquiry to quote",
+      heading: "How we work out the details",
+      steps: [
+        { id: "need", title: "Tell us what you need", description: "Describe the space and the cleaning you have in mind. An enquiry starts a conversation; it does not create a booking or agreement." },
+        { id: "scope", title: "We clarify the scope", description: "Together, we discuss the tasks, priorities and practical considerations that will form the basis of your quote." },
+        { id: "quote", title: "Receive your quote", description: "You receive a quote based on what we have discussed. Review it and raise any questions before deciding." },
+        { id: "agreement", title: "Agree on the work", description: "Work is only arranged once you have accepted the quote and we have agreed on timing and practical details." },
+      ],
+    },
+    transparency: {
+      eyebrow: "A clear starting point",
+      heading: "Understand what your quote covers",
+      description: "The quote should make the agreed scope clear before the work is arranged.",
+      details: "Which rooms, surfaces and tasks are included? Is anything excluded or still to be clarified? Raise questions and discuss any changes before agreeing to the work.",
+    },
+    faq: {
+      eyebrow: "Pricing questions",
+      heading: "Before you request a quote",
+      items: [
+        { id: "price-list", question: "Why is there no standard price list?", answer: "We have not yet published a verified price list. Cleaning needs vary, and a quote needs to reflect the tasks and conditions at the property." },
+        { id: "information", question: "What information helps you prepare a quote?", answer: "Describe the type of cleaning, approximate floor area, number of rooms and location or postcode. Include your preferred timing, how often you need cleaning and any areas that need particular attention. It is fine if some details still need to be worked out." },
+        { id: "recurring", question: "Can regular cleaning be quoted differently from a one-time job?", answer: "Frequency can affect the tasks needed at each visit and therefore the basis of the quote. Regular cleaning does not in itself imply a particular discount or rate." },
+        { id: "commitment", question: "Does requesting a quote commit me to a booking?", answer: "An enquiry does not automatically create a booking or agreement. Work is only arranged after you have accepted the quote and we have agreed on the practical details." },
+      ],
+    },
+    quote: {
+      eyebrow: "The next step",
+      heading: "Tell us what you need",
+      description: "We can discuss the scope and prepare a quote for you.",
+      primaryAction: "Request a quote",
+      secondaryAction: "Contact us",
+    },
+  },
   about: {
   "intro": {
     "eyebrow": "About Nordren",
@@ -228,7 +283,7 @@ export const en = {
   pages: {
     home: { heading: "Nordren", title: "Nordren | Cleaning for homes and workplaces", description: "Cleaning for homes and workplaces. Explore home cleaning, move-out cleaning, office cleaning and deep cleaning with Nordren." },
     services: { heading: "Services", title: "Cleaning services | Nordren", description: "Explore home cleaning, move-out cleaning, office cleaning and deep cleaning. Tell us what you need so we can clarify the scope before preparing a quote." },
-    pricing: { heading: "Pricing", title: "Pricing | Nordren", description: "Pricing information from Nordren will be available here." },
+    pricing: { heading: "Pricing", title: "Pricing | Nordren", description: "Learn what affects a cleaning quote, which details help us prepare it and how we clarify the scope before work is arranged." },
     about: { heading: "About us", title: "About us | Nordren", description: "Learn about Nordren’s approach to cleaning: clear communication, respect for homes and workplaces, and an agreed scope before work begins." },
     contact: { heading: "Contact", title: "Contact | Nordren", description: "Contact information for Nordren will be available here." },
     quote: { heading: "Request a quote", title: "Request a quote | Nordren", description: "The option to send Nordren a quote request will be available here." },
