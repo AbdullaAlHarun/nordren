@@ -17,12 +17,12 @@ export const en = {
         property: "Home or workplace", size: "Approximate size in m²", rooms: "Number of rooms",
         location: "Postcode, town or area", frequency: "Frequency", timing: "Preferred timing", details: "What would you like help with?",
       },
-      serviceOptions: { home: "Home cleaning", "move-out": "Move-out cleaning", office: "Office cleaning", deep: "Deep cleaning", other: "Other / not sure" },
+      serviceOptions: { home: "Home cleaning", "move-out": "Move-out cleaning", window: "Window cleaning", other: "Other", unsure: "Not sure" },
       frequencyOptions: { once: "One-time", recurring: "Recurring", unsure: "Not sure" },
       choose: "Choose an option",
       helpers: { timing: "A date or a period is fine. This does not confirm availability.", details: "Include tasks, priorities and access considerations. Up to 3000 characters." },
       expectation: "An enquiry is not a booking. Scope and timing still need to be confirmed before work is agreed.",
-      development: "This form is being tested. Details are checked in your browser and on the server, but are not stored or delivered to Nordren. Please use test information.",
+      development: "This form is being tested. Details are checked in your browser and on the server, but are not stored or delivered to Vasky. Please use test information.",
       noScript: "Enable JavaScript to try the form. No information has been sent.",
       submit: "Send enquiry",
       pending: "Checking your details …",
@@ -34,7 +34,7 @@ export const en = {
         choice: "Choose or enter a valid value.", tooLong: "This entry is too long. Please shorten it.",
       },
       unavailable: "Not sent yet. Your information passed validation, but delivery is not connected. Nothing was delivered or stored.",
-      failure: "The check could not be completed. Your enquiry has not been delivered to Nordren. Your entries are still in the form. Please try again.",
+      failure: "The check could not be completed. Your enquiry has not been delivered to Vasky. Your entries are still in the form. Please try again.",
     },
     help: { heading: "Not sure what you need?", contact: "Visit the contact page", services: "Explore our services" },
   },
@@ -86,65 +86,138 @@ export const en = {
     },
   },
   pricing: {
-    intro: {
-      eyebrow: "Pricing",
-      heading: "A price based on the work",
-      description: "Every space has different cleaning needs. At Nordren, we first discuss what you need and clarify the scope of the work before preparing a quote.",
-      primaryAction: "Request a quote",
-      secondaryAction: "Contact us",
-    },
-    factors: {
-      eyebrow: "The basis for your quote",
-      heading: "What affects the price?",
-      description: "Size is part of the picture. The tasks, the condition of the space and practical considerations also help determine how much work is involved.",
-      items: [
-        { id: "type", title: "Type of cleaning", description: "Home cleaning, move-out cleaning, office cleaning and deep cleaning can involve different tasks and take different amounts of time." },
-        { id: "size", title: "Size and rooms", description: "The approximate floor area and number of rooms provide a starting point. It also helps to know how many kitchens and bathrooms need cleaning." },
-        { id: "condition", title: "Scope and condition", description: "The surfaces to be cleaned and the attention they need affect the amount of work involved." },
-        { id: "frequency", title: "How often you need cleaning", description: "A one-time job and regular cleaning can involve different scopes. Let us know whether you need a single visit or ongoing help." },
-        { id: "priorities", title: "Specific requests", description: "Areas needing extra attention and tasks you would like to prioritise should be part of the discussion when we prepare your quote." },
-        { id: "access", title: "Access and timing", description: "The location, access to the property and when the work can take place are practical factors that can affect planning and the scope of the job." },
-      ],
-    },
-    process: {
-      eyebrow: "From enquiry to quote",
-      heading: "How we work out the details",
-      steps: [
-        { id: "need", title: "Tell us what you need", description: "Describe the space and the cleaning you have in mind. An enquiry starts a conversation; it does not create a booking or agreement." },
-        { id: "scope", title: "We clarify the scope", description: "Together, we discuss the tasks, priorities and practical considerations that will form the basis of your quote." },
-        { id: "quote", title: "Receive your quote", description: "You receive a quote based on what we have discussed. Review it and raise any questions before deciding." },
-        { id: "agreement", title: "Agree on the work", description: "Work is only arranged once you have accepted the quote and we have agreed on timing and practical details." },
-      ],
-    },
-    transparency: {
-      eyebrow: "A clear starting point",
-      heading: "Understand what your quote covers",
-      description: "The quote should make the agreed scope clear before the work is arranged.",
-      details: "Which rooms, surfaces and tasks are included? Is anything excluded or still to be clarified? Raise questions and discuss any changes before agreeing to the work.",
-    },
-    faq: {
-      eyebrow: "Pricing questions",
-      heading: "Before you request a quote",
-      items: [
-        { id: "price-list", question: "Why is there no standard price list?", answer: "We have not yet published a verified price list. Cleaning needs vary, and a quote needs to reflect the tasks and conditions at the property." },
-        { id: "information", question: "What information helps you prepare a quote?", answer: "Describe the type of cleaning, approximate floor area, number of rooms and location or postcode. Include your preferred timing, how often you need cleaning and any areas that need particular attention. It is fine if some details still need to be worked out." },
-        { id: "recurring", question: "Can regular cleaning be quoted differently from a one-time job?", answer: "Frequency can affect the tasks needed at each visit and therefore the basis of the quote. Regular cleaning does not in itself imply a particular discount or rate." },
-        { id: "commitment", question: "Does requesting a quote commit me to a booking?", answer: "An enquiry does not automatically create a booking or agreement. Work is only arranged after you have accepted the quote and we have agreed on the practical details." },
-      ],
-    },
-    quote: {
-      eyebrow: "The next step",
-      heading: "Tell us what you need",
-      description: "We can discuss the scope and prepare a quote for you.",
-      primaryAction: "Request a quote",
-      secondaryAction: "Contact us",
-    },
+  "intro": {
+    "eyebrow": "Pricing",
+    "heading": "Cleaning prices",
+    "description": "Find hourly rates for home and window cleaning, fixed prices for move-out cleaning and the available extras. See what is included and tell us what you need.",
+    "primaryAction": "Request a quote",
+    "secondaryAction": "Contact us"
   },
+  "hourlyUnit": "per hour",
+  "home": {
+    "heading": "Home cleaning",
+    "scope": {
+      "heading": "Standard home cleaning includes",
+      "description": "Where relevant to your home, standard cleaning covers the following tasks. You can discuss any additional needs with us.",
+      "groups": [
+        {
+          "heading": "Rooms and surfaces",
+          "items": [
+            "Dusting accessible surfaces and frames",
+            "Cleaning kitchen surfaces and the outside of kitchen units",
+            "Cleaning the exterior of bathroom fittings and sanitary fixtures",
+            "Vacuuming furniture, carpets and floors",
+            "Mopping floors"
+          ]
+        }
+      ]
+    },
+    "timeHeading": "Indicative cleaning times",
+    "timeNote": "These are estimates, not guaranteed completion times. Actual time depends on size, condition and scope. A tidy home can generally be cleaned faster than one where belongings need to be moved during cleaning.",
+    "estimates": [
+      {
+        "home": "Small home / apartment",
+        "area": "Approx. 50–80 m²",
+        "time": "Approx. 1.5–2.5 hours"
+      },
+      {
+        "home": "Standard home",
+        "area": "Approx. 90–140 m²",
+        "time": "Approx. 2–4 hours"
+      },
+      {
+        "home": "Larger home",
+        "area": "Approx. 150–200+ m²",
+        "time": "Approx. 4–6 hours"
+      }
+    ]
+  },
+  "moveOut": {
+    "heading": "Move-out cleaning",
+    "description": "A thorough clean to prepare the home for its next owner or tenant. Fixed prices are based on floor area; additional services are listed below.",
+    "tableCaption": "Fixed prices for move-out cleaning",
+    "areaLabel": "Floor area",
+    "priceLabel": "Price",
+    "upTo": "Up to",
+    "scope": {
+      "heading": "What standard move-out cleaning can include",
+      "description": "The following tasks are included where relevant and safely accessible. Exterior windows are cleaned only where they can be reached safely.",
+      "groups": [
+        {
+          "heading": "Rooms and surfaces",
+          "items": [
+            "Dry mopping or dusting ceilings and walls",
+            "Cleaning doors, door frames, skirting boards and trim",
+            "Cleaning the outside of light switches and electrical outlets",
+            "Cleaning window frames and sills",
+            "Vacuuming and thoroughly wet-mopping all floors",
+            "Interior and exterior window cleaning where safely accessible",
+            "Cleaning vents"
+          ]
+        },
+        {
+          "heading": "Kitchen",
+          "items": [
+            "Cleaning kitchen cupboards and drawers inside and out",
+            "Cleaning worktops",
+            "Cleaning the sink and taps"
+          ]
+        },
+        {
+          "heading": "Bathroom",
+          "items": [
+            "Cleaning tiles and walls",
+            "Cleaning the toilet and washbasin",
+            "Cleaning the shower and/or bathtub",
+            "Cleaning floor drains"
+          ]
+        }
+      ]
+    },
+    "extrasHeading": "Move-out cleaning extras",
+    "extraLabels": {
+      "appliances": "Appliances",
+      "balcony": "Balcony/veranda",
+      "storage": "Storage room/basement",
+      "doubleWindows": "Double windows / glazed balcony",
+      "blinds": "Blinds",
+      "fireplace": "Fireplace"
+    },
+    "units": {
+      "each": "each",
+      "squareMetre": "per m²",
+      "window": "per window"
+    },
+    "furnishedLabel": "Furnished property",
+    "furnishedSuffix": "of the fixed price added",
+    "parkingHeading": "Parking for move-out cleaning",
+    "parkingNote": "If free parking is not available at the property, parking charges may be added to the move-out cleaning price."
+  },
+  "window": {
+    "heading": "Window cleaning",
+    "description": "We offer private window cleaning for detached houses, terraced houses and apartments.",
+    "items": [
+      "Interior window cleaning",
+      "Exterior window cleaning where windows are safely accessible"
+    ]
+  },
+  "context": {
+    "heading": "Discuss your needs with us",
+    "description": "Cleaning needs vary with the property and its condition. Home-cleaning time estimates are indicative. Tell us about additional needs, priorities or access considerations so we can clarify the scope together."
+  },
+  "quote": {
+    "eyebrow": "The next step",
+    "heading": "How can we help?",
+    "description": "Tell us about the property and the cleaning you need so we have a starting point for discussing the work.",
+    "primaryAction": "Request a quote",
+    "secondaryAction": "Contact us"
+  }
+},
   about: {
   "intro": {
-    "eyebrow": "About Nordren",
+    "eyebrow": "About Vasky",
     "heading": "Cleaning starts with trust.",
-    "description": "Inviting a cleaning company into your home or workplace is a personal decision. We want clear communication, respect for your space and a shared understanding of the work to shape our relationship with you.",
+    "description": "We started Vasky with the ambition of bringing a hotel-inspired standard of care to the homes and businesses we serve. That means an approach built around careful cleaning, attention to detail, clear communication and respect for your property.",
     "primaryAction": "Request a quote",
     "secondaryAction": "Explore our services"
   },
@@ -229,36 +302,48 @@ export const en = {
     "secondaryAction": "Contact us"
   },
   "suitabilityLabel": "May suit you if",
+  "pricingAction": "See prices and inclusions",
   "items": [
-    {
-      "id": "home",
-      "title": "Home cleaning",
-      "description": "Cleaning for your home, shaped around how you use your rooms. We discuss the areas you would like help with and what you want to prioritise.",
-      "suitability": "you would like help with cleaning at home and want to agree on a scope that reflects your space and daily life.",
-      "action": "Request a home cleaning quote"
-    },
-    {
-      "id": "move-out",
-      "title": "Move-out cleaning",
-      "description": "Cleaning a property when you move out. The size, condition and needs of the property provide the starting point for discussing the work.",
-      "suitability": "you are moving out and need to arrange cleaning before handing over the property.",
-      "action": "Request a move-out cleaning quote"
-    },
-    {
-      "id": "office",
-      "title": "Office cleaning",
-      "description": "Cleaning for offices and workplaces, taking into account the premises and how they are used. We discuss your needs and practical considerations together.",
-      "suitability": "you look after an office or workplace and would like to discuss cleaning for the premises.",
-      "action": "Request an office cleaning quote"
-    },
-    {
-      "id": "deep",
-      "title": "Deep cleaning",
-      "description": "More thorough cleaning when particular rooms or areas need extra attention. We discuss what you would like done before defining the scope.",
-      "suitability": "your usual cleaning does not cover your needs, or you would like to focus on specific areas.",
-      "action": "Request a deep cleaning quote"
-    }
-  ],
+  {
+    "id": "home",
+    "title": "Home cleaning",
+    "description": "Cleaning shaped around your home and your needs. Standard home cleaning includes the following, where relevant.",
+    "scope": [
+      "Dusting accessible surfaces and frames",
+      "Cleaning kitchen surfaces and the outside of kitchen units",
+      "Cleaning the exterior of bathroom fittings and sanitary fixtures",
+      "Vacuuming furniture, carpets and floors",
+      "Mopping floors"
+    ],
+    "suitability": "you would like help cleaning your home. Additional needs can be discussed with us.",
+    "action": "Request a home cleaning quote"
+  },
+  {
+    "id": "move-out",
+    "title": "Move-out cleaning",
+    "description": "A thorough clean to prepare the home for its next owner or tenant. The work can include the following, where relevant and safely accessible.",
+    "scope": [
+      "Dry mopping or dusting ceilings and walls, plus cleaning doors, frames, skirting boards, the outside of switches and sockets, and vents",
+      "Vacuuming and thoroughly wet-mopping floors",
+      "Cleaning window frames and sills, and interior and exterior windows where safely accessible",
+      "Cleaning kitchen cupboards and drawers inside and out, plus worktops, the sink and taps",
+      "Cleaning bathroom tiles, walls, the toilet, washbasin, shower or bathtub, and floor drains"
+    ],
+    "suitability": "you are moving out and need cleaning before handing over the property. The Pricing page has the full standard scope, fixed prices and extras.",
+    "action": "Request a move-out cleaning quote"
+  },
+  {
+    "id": "window",
+    "title": "Window cleaning",
+    "description": "Private window cleaning for detached houses, terraced houses and apartments. We discuss which windows need cleaning and how they can be reached.",
+    "scope": [
+      "Interior window cleaning",
+      "Exterior window cleaning where windows are safely accessible"
+    ],
+    "suitability": "you would like help with windows at home. Exterior windows are cleaned only where access is safe.",
+    "action": "Request a window cleaning quote"
+  }
+],
   "choosing": {
     "heading": "Not sure which service fits?",
     "description": "You do not need to choose in advance. Describe your situation and what you would like help with. We can clarify the type and scope of cleaning before preparing a quote.",
@@ -296,8 +381,8 @@ export const en = {
   home: {
     hero: {
       eyebrow: "For homes and workplaces",
-      heading: "Cleaning you can count on.",
-      description: "Professional cleaning starts with understanding your needs. Tell us about your home or workplace, and we’ll work through the details together.",
+      heading: "Clean spaces. Trusted hands.",
+      description: "Home cleaning, move-out cleaning and window cleaning with care for your space. Our approach centres on attention to detail, clear communication and respect for your property.",
       primaryAction: "Request a quote",
       secondaryAction: "Explore our services",
       photoPlaceholder: "Photography to follow",
@@ -309,8 +394,7 @@ export const en = {
       items: [
         { id: "home", title: "Home cleaning", description: "Cleaning for your home, shaped around the rooms you use and what you need." },
         { id: "move-out", title: "Move-out cleaning", description: "Cleaning when you move. We’ll discuss the property and the scope of the work with you." },
-        { id: "office", title: "Office cleaning", description: "Cleaning for offices and workplaces, taking into account how the space is used." },
-        { id: "deep", title: "Deep cleaning", description: "For rooms and areas that need a more thorough clean." },
+        { id: "window", title: "Window cleaning", description: "Private window cleaning for houses and apartments, inside and outside where safely accessible." },
       ],
     },
     principles: {
@@ -343,7 +427,7 @@ export const en = {
   },
   shell: {
     skipToContent: "Skip to content",
-    homeLabel: "Nordren – home",
+    homeLabel: "Vasky – home",
     primaryNavigation: "Main navigation",
     footerNavigation: "Footer navigation",
     menu: "Menu",
@@ -365,11 +449,11 @@ export const en = {
     },
   },
   pages: {
-    home: { heading: "Nordren", title: "Nordren | Cleaning for homes and workplaces", description: "Cleaning for homes and workplaces. Explore home cleaning, move-out cleaning, office cleaning and deep cleaning with Nordren." },
-    services: { heading: "Services", title: "Cleaning services | Nordren", description: "Explore home cleaning, move-out cleaning, office cleaning and deep cleaning. Tell us what you need so we can clarify the scope before preparing a quote." },
-    pricing: { heading: "Pricing", title: "Pricing | Nordren", description: "Learn what affects a cleaning quote, which details help us prepare it and how we clarify the scope before work is arranged." },
-    about: { heading: "About us", title: "About us | Nordren", description: "Learn about Nordren’s approach to cleaning: clear communication, respect for homes and workplaces, and an agreed scope before work begins." },
-    contact: { heading: "Contact", title: "Contact | Nordren", description: "Prepare a cleaning enquiry for Nordren. Learn which details are helpful and how we discuss your needs and practical arrangements." },
-    quote: { heading: "Request a quote", title: "Request a quote | Nordren", description: "Describe the cleaning you need and share the key details about the work. The quote form is being tested; delivery is not connected yet." },
+    home: { heading: "Vasky", title: "Vasky | Cleaning for homes and workplaces", description: "Cleaning for homes and workplaces. Explore home cleaning, move-out cleaning and window cleaning with Vasky." },
+    services: { heading: "Services", title: "Cleaning services | Vasky", description: "Explore home cleaning, move-out cleaning and window cleaning. Tell us what you need so we can clarify the scope before preparing a quote." },
+    pricing: { heading: "Pricing", title: "Pricing | Vasky", description: "View hourly rates for home and window cleaning, fixed move-out cleaning prices and additional services at Vasky." },
+    about: { heading: "About us", title: "About us | Vasky", description: "Learn about Vasky’s approach to cleaning: clear communication, respect for homes and workplaces, and an agreed scope before work begins." },
+    contact: { heading: "Contact", title: "Contact | Vasky", description: "Prepare a cleaning enquiry for Vasky. Learn which details are helpful and how we discuss your needs and practical arrangements." },
+    quote: { heading: "Request a quote", title: "Request a quote | Vasky", description: "Describe the cleaning you need and share the key details about the work. The quote form is being tested; delivery is not connected yet." },
   },
 } satisfies Dictionary;

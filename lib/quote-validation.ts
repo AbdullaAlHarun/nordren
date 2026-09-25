@@ -3,7 +3,7 @@ export type QuoteField = typeof quoteFields[number];
 export type QuoteValues = Record<QuoteField, string>;
 export type QuoteError = "required" | "email" | "phone" | "number" | "choice" | "tooLong";
 export type QuoteErrors = Partial<Record<QuoteField, QuoteError>>;
-export const serviceOptions = ["home", "move-out", "office", "deep", "other"] as const;
+export const serviceOptions = ["home", "move-out", "window", "other", "unsure"] as const;
 export const frequencyOptions = ["once", "recurring", "unsure"] as const;
 export const fieldLimits: Record<QuoteField, number> = {
   name: 120, email: 254, phone: 60, service: 30, property: 120,

@@ -18,7 +18,7 @@ export function Hero({ content, locale }: { content: HomeContent["hero"]; locale
       </div>
       {/* Reserved for authentic photography. No image or business information is implied. */}
       <div className={styles.photoSpace} aria-hidden="true">
-        <span className={styles.photoBrand}>Nordren</span>
+        <span className={styles.photoBrand}>Vasky</span>
         <span className={styles.photoCaption}>{content.photoPlaceholder}</span>
       </div>
     </section>

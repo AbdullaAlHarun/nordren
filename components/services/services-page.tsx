@@ -37,8 +37,14 @@ export function ServicesPage({ locale }: { locale: Locale }) {
               </div>
               <div className={styles.details}>
                 <p>{service.description}</p>
+                <ul className={styles.scope}>
+                  {service.scope.map((item) => <li key={item}>{item}</li>)}
+                </ul>
                 <p className={styles.suitability}><strong>{content.suitabilityLabel}</strong>{" "}{service.suitability}</p>
-                <ButtonLink href={routes.quote[locale]} variant="text" className={styles.serviceAction}>{service.action}</ButtonLink>
+                <div className={styles.actions}>
+                  <ButtonLink href={routes.quote[locale]} variant="text">{service.action}</ButtonLink>
+                  <ButtonLink href={`${routes.pricing[locale]}#${service.id}`} variant="text">{content.pricingAction}</ButtonLink>
+                </div>
               </div>
             </section>
           ))}

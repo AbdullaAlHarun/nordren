@@ -17,12 +17,12 @@ export const nb = {
         property: "Bolig eller arbeidsplass", size: "Omtrentlig størrelse i m²", rooms: "Antall rom",
         location: "Postnummer, sted eller område", frequency: "Hvor ofte", timing: "Ønsket tidspunkt", details: "Hva vil du ha hjelp med?",
       },
-      serviceOptions: { home: "Hjemmerengjøring", "move-out": "Flyttevask", office: "Kontorrengjøring", deep: "Grundig rengjøring", other: "Annet / usikker" },
+      serviceOptions: { home: "Husvask", "move-out": "Flyttevask", window: "Vindusvask", other: "Annet", unsure: "Usikker" },
       frequencyOptions: { once: "Én gang", recurring: "Regelmessig", unsure: "Usikker" },
       choose: "Velg et alternativ",
       helpers: { timing: "Skriv gjerne en dato eller periode. Dette bekrefter ikke ledig kapasitet.", details: "Ta gjerne med oppgaver, prioriteringer og hensyn ved adkomst. Maks 3000 tegn." },
       expectation: "En forespørsel er ikke en bestilling. Omfang og tidspunkt må bekreftes før arbeidet avtales.",
-      development: "Skjemaet er under utprøving. Opplysningene kontrolleres i nettleseren og på serveren, men lagres ikke og leveres ikke til Nordren. Bruk testopplysninger.",
+      development: "Skjemaet er under utprøving. Opplysningene kontrolleres i nettleseren og på serveren, men lagres ikke og leveres ikke til Vasky. Bruk testopplysninger.",
       noScript: "JavaScript må være aktivert for å prøve skjemaet. Ingen opplysninger er sendt.",
       submit: "Send forespørsel",
       pending: "Kontrollerer opplysningene …",
@@ -34,7 +34,7 @@ export const nb = {
         choice: "Velg eller skriv en gyldig verdi.", tooLong: "Teksten er for lang. Forkort innholdet i feltet.",
       },
       unavailable: "Ikke sendt ennå. Opplysningene er kontrollert, men innsending er ikke tilkoblet. Ingenting er levert eller lagret.",
-      failure: "Kontrollen kunne ikke fullføres. Forespørselen er ikke levert til Nordren. Opplysningene står fortsatt i skjemaet. Prøv igjen.",
+      failure: "Kontrollen kunne ikke fullføres. Forespørselen er ikke levert til Vasky. Opplysningene står fortsatt i skjemaet. Prøv igjen.",
     },
     help: { heading: "Usikker på hva du trenger?", contact: "Se kontaktsiden", services: "Utforsk tjenestene" },
   },
@@ -86,65 +86,138 @@ export const nb = {
     },
   },
   pricing: {
-    intro: {
-      eyebrow: "Priser",
-      heading: "En pris tilpasset oppdraget",
-      description: "Behovet for renhold varierer fra sted til sted. Hos Nordren avklarer vi først hva du trenger hjelp med og omfanget av arbeidet, før vi gir deg et tilbud.",
-      primaryAction: "Be om tilbud",
-      secondaryAction: "Kontakt oss",
-    },
-    factors: {
-      eyebrow: "Grunnlaget for tilbudet",
-      heading: "Hva påvirker prisen?",
-      description: "Størrelsen er én del av bildet. Oppgavene, tilstanden og de praktiske forholdene er også med på å avgjøre hvor omfattende renholdet blir.",
-      items: [
-        { id: "type", title: "Type renhold", description: "Hjemmerengjøring, flyttevask, kontorrengjøring og grundig rengjøring kan innebære ulike oppgaver og ulikt tidsbruk." },
-        { id: "size", title: "Størrelse og rom", description: "Omtrentlig areal og antall rom gir et utgangspunkt. Fortell gjerne også hvor mange kjøkken og bad som skal rengjøres." },
-        { id: "condition", title: "Omfang og tilstand", description: "Hvilke flater som skal rengjøres, og hvor mye rengjøring de trenger, påvirker arbeidsmengden." },
-        { id: "frequency", title: "Hvor ofte du ønsker renhold", description: "Et enkeltoppdrag og regelmessig renhold kan ha ulikt omfang. Oppgi om du ønsker hjelp én gang eller over tid." },
-        { id: "priorities", title: "Særlige ønsker", description: "Områder som trenger ekstra oppmerksomhet, eller oppgaver du ønsker å prioritere, bør tas med når vi avklarer tilbudet." },
-        { id: "access", title: "Adkomst og tidspunkt", description: "Hvor stedet ligger, hvordan vi får tilgang, og når arbeidet kan gjøres, er praktiske forhold som kan påvirke planleggingen og omfanget." },
-      ],
-    },
-    process: {
-      eyebrow: "Fra forespørsel til tilbud",
-      heading: "Slik avklarer vi oppdraget",
-      steps: [
-        { id: "need", title: "Fortell hva du trenger", description: "Beskriv stedet og renholdet du ønsker. En forespørsel er starten på en dialog, ikke en bestilling eller avtale." },
-        { id: "scope", title: "Vi avklarer omfanget", description: "Sammen går vi gjennom oppgaver, prioriteringer og praktiske forhold som tilbudet skal bygge på." },
-        { id: "quote", title: "Du mottar et tilbud", description: "Du får et tilbud basert på det vi har avklart. Les gjennom det og ta opp eventuelle spørsmål før du bestemmer deg." },
-        { id: "agreement", title: "Vi avtaler arbeidet", description: "Arbeidet avtales først når tilbudet er akseptert og vi er enige om tidspunkt og praktiske detaljer." },
-      ],
-    },
-    transparency: {
-      eyebrow: "Et tydelig grunnlag",
-      heading: "Vit hva tilbudet omfatter",
-      description: "Tilbudet bør gjøre det avtalte omfanget tydelig før arbeidet avtales.",
-      details: "Hvilke rom, flater og oppgaver er med? Er det noe som ikke inngår, eller som fortsatt må avklares? Ta opp spørsmål og ønsker om endringer før dere blir enige om oppdraget.",
-    },
-    faq: {
-      eyebrow: "Spørsmål om pris",
-      heading: "Greit å vite før du spør",
-      items: [
-        { id: "price-list", question: "Hvorfor er det ingen standard prisliste?", answer: "Vi har ikke publisert en verifisert prisliste ennå. Renholdsbehov varierer, og et tilbud må ta utgangspunkt i oppgavene og forholdene på stedet." },
-        { id: "information", question: "Hva bør jeg oppgi for å få et tilbud?", answer: "Beskriv typen renhold, omtrentlig areal, antall rom og sted eller postnummer. Ta gjerne med ønsket tidspunkt, hvor ofte du ønsker renhold og områder som trenger særlig oppmerksomhet. Det er greit om ikke alle detaljer er klare ennå." },
-        { id: "recurring", question: "Vurderes regelmessig renhold annerledes enn et enkeltoppdrag?", answer: "Hyppigheten kan påvirke hvilke oppgaver som trengs ved hvert besøk, og dermed grunnlaget for tilbudet. Regelmessig renhold betyr ikke i seg selv at en bestemt rabatt eller pris gjelder." },
-        { id: "commitment", question: "Forplikter jeg meg ved å be om et tilbud?", answer: "En forespørsel oppretter ikke automatisk en bestilling eller avtale. Arbeidet avtales først etter at du har akseptert tilbudet og vi har avklart de praktiske detaljene." },
-      ],
-    },
-    quote: {
-      eyebrow: "Neste steg",
-      heading: "Fortell oss hva du trenger",
-      description: "Vi kan avklare omfanget og gi deg et tilbud.",
-      primaryAction: "Be om tilbud",
-      secondaryAction: "Kontakt oss",
-    },
+  "intro": {
+    "eyebrow": "Priser",
+    "heading": "Priser for rene rom",
+    "description": "Her finner du timepriser for husvask og vindusvask, fastpriser for flyttevask og priser på tilleggstjenester. Se hva som inngår, og fortell oss hva du trenger hjelp med.",
+    "primaryAction": "Be om tilbud",
+    "secondaryAction": "Kontakt oss"
   },
+  "hourlyUnit": "per time",
+  "home": {
+    "heading": "Husvask",
+    "scope": {
+      "heading": "Dette inngår i standard husvask",
+      "description": "Der det er relevant for boligen, omfatter standard husvask følgende oppgaver. Har du andre behov, kan du ta dem opp med oss.",
+      "groups": [
+        {
+          "heading": "Rom og flater",
+          "items": [
+            "Støvtørking av tilgjengelige flater og karmer",
+            "Utvendig rengjøring av kjøkkenflater og kjøkkeninnredning",
+            "Utvendig rengjøring av baderomsinventar og sanitærutstyr",
+            "Støvsuging av møbler, tepper og gulv",
+            "Gulvvask"
+          ]
+        }
+      ]
+    },
+    "timeHeading": "Veiledende tidsbruk",
+    "timeNote": "Tidene er veiledende, ikke en garanti. Faktisk tidsbruk avhenger av størrelse, tilstand og omfang. En ryddig bolig kan vanligvis rengjøres raskere enn en bolig der eiendeler må flyttes underveis.",
+    "estimates": [
+      {
+        "home": "Liten bolig / leilighet",
+        "area": "Ca. 50–80 m²",
+        "time": "Ca. 1,5–2,5 timer"
+      },
+      {
+        "home": "Standard bolig",
+        "area": "Ca. 90–140 m²",
+        "time": "Ca. 2–4 timer"
+      },
+      {
+        "home": "Større bolig",
+        "area": "Ca. 150–200+ m²",
+        "time": "Ca. 4–6 timer"
+      }
+    ]
+  },
+  "moveOut": {
+    "heading": "Flyttevask",
+    "description": "En grundig rengjøring som skal gjøre boligen klar for neste eier eller leietaker. Se fastprisene etter boligens areal og tilleggene nedenfor.",
+    "tableCaption": "Fastpriser for flyttevask",
+    "areaLabel": "Areal",
+    "priceLabel": "Pris",
+    "upTo": "Opptil",
+    "scope": {
+      "heading": "Dette kan inngå i standard flyttevask",
+      "description": "Oppgavene nedenfor inngår der de er relevante og trygt tilgjengelige. Utvendig vindusvask utføres bare der vinduene kan nås på en trygg måte.",
+      "groups": [
+        {
+          "heading": "Rom og flater",
+          "items": [
+            "Tørrmopping eller støvtørking av tak og vegger",
+            "Vask av dører, dørkarmer, lister og karmer",
+            "Utvendig rengjøring av lysbrytere og stikkontakter",
+            "Rengjøring av vinduskarmer",
+            "Støvsuging og grundig våtvask av alle gulv",
+            "Innvendig og utvendig vindusvask der det er trygt og tilgjengelig",
+            "Rengjøring av ventiler"
+          ]
+        },
+        {
+          "heading": "Kjøkken",
+          "items": [
+            "Innvendig og utvendig vask av kjøkkenskap og skuffer",
+            "Rengjøring av benkeplater",
+            "Rengjøring av vaskekum og kraner"
+          ]
+        },
+        {
+          "heading": "Bad",
+          "items": [
+            "Vask av fliser og vegger",
+            "Rengjøring av toalett og servant",
+            "Rengjøring av dusj og/eller badekar",
+            "Rengjøring av gulvsluk"
+          ]
+        }
+      ]
+    },
+    "extrasHeading": "Tillegg til flyttevask",
+    "extraLabels": {
+      "appliances": "Hvitevarer",
+      "balcony": "Balkong/veranda",
+      "storage": "Bod/kjeller",
+      "doubleWindows": "Doble vinduer / innglasset balkong",
+      "blinds": "Persienner",
+      "fireplace": "Peis"
+    },
+    "units": {
+      "each": "per stk.",
+      "squareMetre": "per m²",
+      "window": "per vindu"
+    },
+    "furnishedLabel": "Møblert bolig",
+    "furnishedSuffix": "av fastprisen i tillegg",
+    "parkingHeading": "Parkering ved flyttevask",
+    "parkingNote": "Hvis det ikke er gratis parkering ved boligen, kan parkeringsutgifter komme i tillegg til prisen for flyttevask."
+  },
+  "window": {
+    "heading": "Vindusvask",
+    "description": "Vi tilbyr privat vindusvask for eneboliger, rekkehus og leiligheter.",
+    "items": [
+      "Innvendig vindusvask",
+      "Utvendig vindusvask der vinduene er trygt tilgjengelige"
+    ]
+  },
+  "context": {
+    "heading": "Avklar behovet med oss",
+    "description": "Renholdsbehov varierer med boligen og tilstanden. Tidsanslagene for husvask er veiledende. Fortell oss om ekstra behov, prioriteringer eller forhold ved adkomsten, så kan vi avklare omfanget sammen."
+  },
+  "quote": {
+    "eyebrow": "Neste steg",
+    "heading": "Hva trenger du hjelp med?",
+    "description": "Beskriv boligen og renholdet du ønsker, så har vi et utgangspunkt for å avklare oppdraget.",
+    "primaryAction": "Be om tilbud",
+    "secondaryAction": "Kontakt oss"
+  }
+},
   about: {
   "intro": {
-    "eyebrow": "Om Nordren",
+    "eyebrow": "Om Vasky",
     "heading": "Renhold handler også om tillit.",
-    "description": "Når du slipper et renholdsfirma inn i hjemmet eller på arbeidsplassen, betyr det noe hvordan du blir møtt. Vi ønsker at tydelig kommunikasjon, respekt for stedet og en felles forståelse av oppdraget skal prege samarbeidet.",
+    "description": "Vi startet Vasky med en ambisjon om å ta med oss omtanken og sansen for detaljer fra hotellverdenen til hjemmene og bedriftene vi besøker. For oss handler det om nøye renhold, tydelig kommunikasjon og respekt for eiendommen din.",
     "primaryAction": "Be om tilbud",
     "secondaryAction": "Se våre tjenester"
   },
@@ -229,36 +302,48 @@ export const nb = {
     "secondaryAction": "Kontakt oss"
   },
   "suitabilityLabel": "Kan passe for deg som",
+  "pricingAction": "Se priser og hva som inngår",
   "items": [
-    {
-      "id": "home",
-      "title": "Hjemmerengjøring",
-      "description": "Renhold av hjemmet med utgangspunkt i hvordan du bruker rommene. Vi avklarer hvilke områder du ønsker hjelp med, og hva du vil prioritere.",
-      "suitability": "ønsker hjelp med rengjøringen hjemme og vil avtale omfanget ut fra boligen og hverdagen din.",
-      "action": "Be om tilbud på hjemmerengjøring"
-    },
-    {
-      "id": "move-out",
-      "title": "Flyttevask",
-      "description": "Renhold av boligen i forbindelse med flytting. Boligens størrelse, tilstand og behov danner grunnlaget for å avklare oppdraget.",
-      "suitability": "skal flytte fra en bolig og trenger å avklare rengjøringen før overlevering.",
-      "action": "Be om tilbud på flyttevask"
-    },
-    {
-      "id": "office",
-      "title": "Kontorrengjøring",
-      "description": "Renhold av kontorer og arbeidsplasser med utgangspunkt i lokalene og hvordan de brukes. Vi går gjennom behov og praktiske hensyn sammen.",
-      "suitability": "har ansvar for et kontor eller en arbeidsplass og ønsker å diskutere renholdet av lokalene.",
-      "action": "Be om tilbud på kontorrengjøring"
-    },
-    {
-      "id": "deep",
-      "title": "Grundig rengjøring",
-      "description": "Mer omfattende rengjøring når enkelte rom eller områder trenger ekstra oppmerksomhet. Vi avklarer hva du ønsker å få gjort, før vi setter omfanget.",
-      "suitability": "opplever at den vanlige rengjøringen ikke dekker behovet, eller ønsker å prioritere bestemte områder.",
-      "action": "Be om tilbud på grundig rengjøring"
-    }
-  ],
+  {
+    "id": "home",
+    "title": "Husvask",
+    "description": "Renhold av hjemmet med utgangspunkt i rommene og behovene dine. Standard husvask omfatter følgende der det er relevant.",
+    "scope": [
+      "Støvtørking av tilgjengelige flater og karmer",
+      "Utvendig rengjøring av kjøkkenflater og kjøkkeninnredning",
+      "Utvendig rengjøring av baderomsinventar og sanitærutstyr",
+      "Støvsuging av møbler, tepper og gulv",
+      "Gulvvask"
+    ],
+    "suitability": "ønsker hjelp med rengjøringen hjemme. Ekstra behov kan diskuteres med oss.",
+    "action": "Be om tilbud på husvask"
+  },
+  {
+    "id": "move-out",
+    "title": "Flyttevask",
+    "description": "Grundig rengjøring som skal gjøre boligen klar for neste eier eller leietaker. Arbeidet kan omfatte følgende der det er relevant og trygt tilgjengelig.",
+    "scope": [
+      "Tørrmopping eller støvtørking av tak og vegger, samt rengjøring av dører, karmer, lister og ventiler, samt utvendig rengjøring av brytere og stikkontakter",
+      "Støvsuging og grundig våtvask av gulv",
+      "Rengjøring av vinduskarmer og vindusvask innvendig og utvendig der det er trygt og tilgjengelig",
+      "Innvendig og utvendig vask av kjøkkenskap og skuffer, samt rengjøring av benkeplater, vaskekum og kraner",
+      "Rengjøring av fliser, vegger, toalett, servant, dusj eller badekar og gulvsluk på bad"
+    ],
+    "suitability": "skal flytte fra en bolig og trenger renhold før overlevering. På prissiden finner du full oversikt over standardomfang, fastpriser og tillegg.",
+    "action": "Be om tilbud på flyttevask"
+  },
+  {
+    "id": "window",
+    "title": "Vindusvask",
+    "description": "Privat vindusvask for eneboliger, rekkehus og leiligheter. Vi avklarer hvilke vinduer som skal vaskes, og hvordan de kan nås.",
+    "scope": [
+      "Innvendig vindusvask",
+      "Utvendig vindusvask der vinduene er trygt tilgjengelige"
+    ],
+    "suitability": "ønsker hjelp med vindusvask hjemme. Utvendige vinduer vaskes bare der tilgangen er trygg.",
+    "action": "Be om tilbud på vindusvask"
+  }
+],
   "choosing": {
     "heading": "Usikker på hvilken tjeneste som passer?",
     "description": "Du trenger ikke velge på forhånd. Beskriv situasjonen din og hva du ønsker hjelp med, så kan vi avklare hvilken type renhold og hvilket omfang som passer før vi gir et tilbud.",
@@ -296,8 +381,8 @@ export const nb = {
   home: {
     hero: {
       eyebrow: "For hjem og arbeidsplasser",
-      heading: "Renhold du kan stole på.",
-      description: "Profesjonelt renhold starter med å forstå hva du trenger. Fortell oss om hjemmet eller arbeidsplassen din, så avklarer vi oppdraget sammen.",
+      heading: "Rene rom. Trygge hender.",
+      description: "Husvask, flyttevask og vindusvask med omtanke for rommene dine. Vi legger vekt på detaljene, tydelig kommunikasjon og respekt for eiendommen din.",
       primaryAction: "Be om tilbud",
       secondaryAction: "Se våre tjenester",
       photoPlaceholder: "Fotografi kommer",
@@ -307,10 +392,9 @@ export const nb = {
       heading: "Renhold tilpasset behovet ditt",
       description: "Ulike rom og situasjoner krever ulikt renhold. Finn tjenesten som passer det du trenger hjelp til.",
       items: [
-        { id: "home", title: "Hjemmerengjøring", description: "Renhold i hjemmet, med utgangspunkt i rommene du bruker og behovene du har." },
+        { id: "home", title: "Husvask", description: "Renhold i hjemmet, med utgangspunkt i rommene du bruker og behovene du har." },
         { id: "move-out", title: "Flyttevask", description: "Renhold ved flytting. Vi avklarer boligen og omfanget av oppdraget sammen." },
-        { id: "office", title: "Kontorrengjøring", description: "Renhold av kontorer og arbeidsplasser, tilpasset hvordan lokalene brukes." },
-        { id: "deep", title: "Grundig rengjøring", description: "For rom og områder som trenger en mer omfattende rengjøring." },
+        { id: "window", title: "Vindusvask", description: "Privat vindusvask for eneboliger, rekkehus og leiligheter, innvendig og utvendig der det er trygt tilgjengelig." },
       ],
     },
     principles: {
@@ -343,7 +427,7 @@ export const nb = {
   },
   shell: {
     skipToContent: "Hopp til innhold",
-    homeLabel: "Nordren – forsiden",
+    homeLabel: "Vasky – forsiden",
     primaryNavigation: "Hovedmeny",
     footerNavigation: "Navigasjon i bunntekst",
     menu: "Meny",
@@ -365,11 +449,11 @@ export const nb = {
     },
   },
   pages: {
-    home: { heading: "Nordren", title: "Nordren | Renhold for hjem og arbeidsplasser", description: "Renhold for hjem og arbeidsplasser. Utforsk hjemmerengjøring, flyttevask, kontorrengjøring og grundig rengjøring hos Nordren." },
-    services: { heading: "Tjenester", title: "Renholdstjenester | Nordren", description: "Utforsk hjemmerengjøring, flyttevask, kontorrengjøring og grundig rengjøring. Beskriv behovet ditt, så avklarer vi omfanget før et tilbud." },
-    pricing: { heading: "Priser", title: "Priser | Nordren", description: "Se hva som påvirker et tilbud på renhold, hvilke opplysninger som er nyttige, og hvordan vi avklarer omfanget før arbeidet avtales." },
-    about: { heading: "Om oss", title: "Om oss | Nordren", description: "Les om Nordrens tilnærming til renhold: tydelig kommunikasjon, respekt for hjem og arbeidsplasser og et avklart omfang før oppdraget." },
-    contact: { heading: "Kontakt", title: "Kontakt | Nordren", description: "Forbered en henvendelse om renhold til Nordren. Se hvilke opplysninger som er nyttige, og hvordan behov og praktiske detaljer avklares." },
-    quote: { heading: "Be om tilbud", title: "Be om tilbud | Nordren", description: "Beskriv renholdet du ønsker og de viktigste opplysningene om oppdraget. Tilbudsskjemaet er under utprøving; innsending er ikke tilkoblet ennå." },
+    home: { heading: "Vasky", title: "Vasky | Renhold for hjem og arbeidsplasser", description: "Renhold for hjem og arbeidsplasser. Utforsk husvask, flyttevask og vindusvask hos Vasky." },
+    services: { heading: "Tjenester", title: "Renholdstjenester | Vasky", description: "Utforsk husvask, flyttevask og vindusvask. Beskriv behovet ditt, så avklarer vi omfanget før et tilbud." },
+    pricing: { heading: "Priser", title: "Priser | Vasky", description: "Se timepriser for husvask og vindusvask, fastpriser for flyttevask og priser på tilleggstjenester hos Vasky." },
+    about: { heading: "Om oss", title: "Om oss | Vasky", description: "Les om Vaskys tilnærming til renhold: tydelig kommunikasjon, respekt for hjem og arbeidsplasser og et avklart omfang før oppdraget." },
+    contact: { heading: "Kontakt", title: "Kontakt | Vasky", description: "Forbered en henvendelse om renhold til Vasky. Se hvilke opplysninger som er nyttige, og hvordan behov og praktiske detaljer avklares." },
+    quote: { heading: "Be om tilbud", title: "Be om tilbud | Vasky", description: "Beskriv renholdet du ønsker og de viktigste opplysningene om oppdraget. Tilbudsskjemaet er under utprøving; innsending er ikke tilkoblet ennå." },
   },
 } satisfies Dictionary;

@@ -137,6 +137,19 @@ h1 {
   padding-block: var(--space-3);
 }
 
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target-size);
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  display: block;
+  width: 7rem;
+  height: auto;
+}
+
 .wordmark {
   display: inline-flex;
   align-items: center;
@@ -204,19 +217,20 @@ h1 {
 }
 
 .mobile-navigation-toggle {
-  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--target-size);
   min-height: var(--target-size);
-  padding: var(--space-2) var(--space-3);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-control);
+  padding: 0;
+  border-radius: var(--radius-small);
   color: var(--brand-primary);
-  font-weight: 500;
   cursor: pointer;
-  list-style-position: inside;
+  list-style: none;
 }
 
-.mobile-navigation-toggle::marker {
-  color: var(--brand-primary);
+.mobile-navigation-toggle::-webkit-details-marker {
+  display: none;
 }
 
 .mobile-navigation-panel {
@@ -331,8 +345,47 @@ h1 {
   gap: var(--space-2) var(--space-4);
 }
 
+/* Reserve room for the native summary; its panel stays in normal document flow. */
+@media (width < 70rem) {
+  .site-header > .container {
+    position: relative;
+  }
+
+  .site-header .header-row {
+    flex-wrap: nowrap;
+    gap: var(--space-1);
+    padding-inline-end: calc(var(--target-size) + var(--space-1));
+  }
+
+  .site-header .brand-logo {
+    width: clamp(5.5rem, 27vw, 6rem);
+  }
+
+  .site-header .language-switcher {
+    margin-inline-start: auto;
+  }
+
+  .mobile-navigation {
+    padding-block-end: 0;
+  }
+
+  .mobile-navigation[open] {
+    padding-block-end: var(--space-3);
+  }
+
+  .mobile-navigation-toggle {
+    position: absolute;
+    inset-inline-end: var(--gutter);
+    inset-block-start: var(--space-3);
+
+  }
+}
 /* Keep the disclosure until both languages have room for all desktop controls. */
 @media (min-width: 70rem) {
+  .brand-logo {
+    width: 8rem;
+  }
+
   .header-row {
     flex-wrap: nowrap;
     gap: var(--space-5);

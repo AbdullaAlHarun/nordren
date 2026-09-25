@@ -49,14 +49,22 @@ export type HomeContent = {
   };
 };
 
+export type ServiceScope = {
+  heading: string;
+  description: string;
+  groups: readonly { heading: string; items: readonly string[] }[];
+};
+
 export type ServicesContent = {
   intro: HomeContent["quote"];
   suitabilityLabel: string;
+  pricingAction: string;
   items: readonly {
-    id: "home" | "move-out" | "office" | "deep";
+    id: "home" | "move-out" | "window";
     title: string;
     description: string;
     suitability: string;
+    scope: readonly string[];
     action: string;
   }[];
   choosing: { heading: string; description: string; action: string };
@@ -83,14 +91,32 @@ export type AboutContent = {
 
 export type PricingContent = {
   intro: HomeContent["quote"];
-  factors: HomeContent["principles"];
-  process: AboutContent["expectations"];
-  transparency: AboutContent["transparency"];
-  faq: {
-    eyebrow: string;
+  hourlyUnit: string;
+  home: {
     heading: string;
-    items: readonly { id: string; question: string; answer: string }[];
+    scope: ServiceScope;
+    timeHeading: string;
+    timeNote: string;
+    estimates: readonly { home: string; area: string; time: string }[];
   };
+  moveOut: {
+    heading: string;
+    description: string;
+    tableCaption: string;
+    areaLabel: string;
+    priceLabel: string;
+    upTo: string;
+    scope: ServiceScope;
+    extrasHeading: string;
+    extraLabels: Record<typeof import("./pricing-data").pricingRates.extras[number]["id"], string>;
+    units: Record<"each" | "squareMetre" | "window", string>;
+    furnishedLabel: string;
+    furnishedSuffix: string;
+    parkingHeading: string;
+    parkingNote: string;
+  };
+  window: { heading: string; description: string; items: readonly string[] };
+  context: { heading: string; description: string };
   quote: HomeContent["quote"];
 };
 

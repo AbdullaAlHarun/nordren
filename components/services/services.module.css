@@ -55,11 +55,14 @@
   color: var(--foreground);
 }
 
-.serviceAction {
+.scope {
+  list-style: disc;
+  padding-inline-start: var(--space-5);
   margin-block-start: var(--space-5);
-  text-align: start;
-  justify-content: flex-start;
-  color: var(--brand-primary);
+}
+
+.scope li + li {
+  margin-block-start: var(--space-3);
 }
 
 .choosing {

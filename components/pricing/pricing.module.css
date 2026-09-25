@@ -1,32 +1,152 @@
-.faq details {
-  border-top: 1px solid var(--border-subtle);
+.section {
+  display: grid;
+  gap: var(--space-8);
+  border-top: 1px solid var(--border);
+  padding-block-start: var(--space-8);
+  scroll-margin-block-start: var(--space-8);
 }
 
-.faq details:first-child {
-  border-color: var(--border);
+.section > *,
+.details > * {
+  min-width: 0;
 }
 
-.faq summary {
-  min-height: var(--target-size);
-  padding-block: var(--space-5);
-  font-size: 1.1875rem;
-  font-weight: 500;
-  line-height: 1.5;
-  cursor: pointer;
-  list-style-position: inside;
+.details {
+  display: grid;
+  gap: var(--space-12);
 }
 
-.faq summary::marker {
+.rate {
+  margin-block-start: var(--space-5);
   color: var(--brand-primary);
+  font-size: 1.75rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
 }
 
-.faq details[open] summary {
-  text-decoration: underline;
-  text-underline-offset: 0.25em;
+.rate span {
+  display: block;
+  font-size: var(--text-body);
+  font-weight: 400;
 }
 
-.faq p {
-  max-width: 55ch;
-  padding-block-end: var(--space-6);
+.note {
+  margin-block-start: var(--space-4);
+  max-width: var(--reading-width);
   color: var(--text-muted);
+}
+
+.scopeGroups {
+  display: grid;
+  gap: var(--space-6);
+  margin-block-start: var(--space-5);
+}
+
+.scope h4 {
+  font-weight: 500;
+}
+
+.list {
+  list-style: disc;
+  padding-inline-start: var(--space-5);
+  margin-block-start: var(--space-4);
+  color: var(--text-muted);
+}
+
+.list li + li {
+  margin-block-start: var(--space-2);
+}
+
+.priceTable {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.priceTable caption {
+  text-align: start;
+  font-weight: 500;
+  margin-block-end: var(--space-4);
+}
+
+.priceTable th,
+.priceTable td {
+  padding: var(--space-4) var(--space-1);
+  text-align: start;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.priceTable thead th {
+  background: var(--surface);
+  border-block: 1px solid var(--border);
+  font-weight: 500;
+}
+
+.priceTable tbody th {
+  font-weight: 400;
+}
+
+.priceTable td,
+.priceTable th:last-child {
+  text-align: end;
+}
+
+.estimates,
+.extras {
+  margin-block-start: var(--space-5);
+}
+
+.estimates > div,
+.extras > div {
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.estimates > div:first-child,
+.extras > div:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.estimates dt,
+.extras dt {
+  font-weight: 500;
+}
+
+.estimates dd,
+.extras dd {
+  margin-block-start: var(--space-2);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.estimates dd span {
+  display: block;
+}
+
+.parking {
+  border-inline-start: 2px solid var(--border);
+  padding-inline-start: var(--space-4);
+}
+
+@media (min-width: 48rem) {
+  .section {
+    grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+    gap: clamp(2rem, 6vw, 6rem);
+  }
+}
+
+@media (min-width: 64rem) {
+  .extras > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-4);
+  }
+
+  .extras dd {
+    text-align: end;
+    margin-block-start: 0;
+  }
 }

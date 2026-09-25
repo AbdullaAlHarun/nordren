@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getDictionary } from "@/content";
 import { ButtonLink } from "@/components/button";
 import { LanguageSwitcher } from "@/components/language-switcher";
@@ -18,8 +19,16 @@ export function Header({ locale, page }: { locale: Locale; page: PageId }) {
     <header className="site-header">
       <div className="container">
         <div className="header-row">
-          <a className="wordmark" href={routes.home[locale]} aria-label={content.homeLabel}>
-            Nordren
+          <a className="brand-link" href={routes.home[locale]} aria-label={content.homeLabel}>
+            <Image
+              src="/brand/vasky-logo.png"
+              alt="Vasky"
+              width={1774}
+              height={887}
+              sizes="(min-width: 70rem) 128px, 96px"
+              loading="eager"
+              className="brand-logo"
+            />
           </a>
           <div className="desktop-navigation">
             <Navigation locale={locale} page={page} />
