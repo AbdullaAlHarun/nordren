@@ -1,11 +1,21 @@
 import type { Dictionary } from "./types";
 
 export const nb = {
+  business: {
+    "emailLabel": "E-post",
+    "areaLabel": "Tjenesteområde",
+    "serviceArea": "Oslo og nærliggende områder",
+    "commercial": {
+      "heading": "Renhold for bedriften?",
+      "description": "Vi tar også imot forespørsler om renhold av næringslokaler. Hvert oppdrag vurderes individuelt. Ta kontakt, så ser vi på om vi kan hjelpe.",
+      "action": "Kontakt oss om renhold for bedriften"
+    }
+  },
   quote: {
     intro: {
       eyebrow: "Be om tilbud",
       heading: "Fortell oss hva du trenger",
-      description: "Beskriv det viktigste om renholdet du ønsker. Opplysningene gir et utgangspunkt for å forstå behovet og avklare omfanget.",
+      description: "Fyll ut skjemaet for å be om et tilbud på renhold. Du kan velge «Usikker» hvis du ikke vet hvilken tjeneste som passer.",
     },
     form: {
       heading: "Om deg og oppdraget",
@@ -14,7 +24,7 @@ export const nb = {
       groups: { contact: "Kontaktopplysninger", job: "Renholdet du ønsker", details: "Mer om behovet" },
       labels: {
         name: "Navn", email: "E-post", phone: "Telefon", service: "Type renhold",
-        property: "Bolig eller arbeidsplass", size: "Omtrentlig størrelse i m²", rooms: "Antall rom",
+        property: "Type bolig eller lokale (f.eks. leilighet, hus eller kontor)", size: "Omtrentlig størrelse i m²", rooms: "Antall rom",
         location: "Postnummer, sted eller område", frequency: "Hvor ofte", timing: "Ønsket tidspunkt", details: "Hva vil du ha hjelp med?",
       },
       serviceOptions: { home: "Husvask", "move-out": "Flyttevask", window: "Vindusvask", other: "Annet", unsure: "Usikker" },
@@ -22,10 +32,10 @@ export const nb = {
       choose: "Velg et alternativ",
       helpers: { timing: "Skriv gjerne en dato eller periode. Dette bekrefter ikke ledig kapasitet.", details: "Ta gjerne med oppgaver, prioriteringer og hensyn ved adkomst. Maks 3000 tegn." },
       expectation: "En forespørsel er ikke en bestilling. Omfang og tidspunkt må bekreftes før arbeidet avtales.",
-      development: "Skjemaet er under utprøving. Opplysningene kontrolleres i nettleseren og på serveren, men lagres ikke og leveres ikke til Vasky. Bruk testopplysninger.",
-      noScript: "JavaScript må være aktivert for å prøve skjemaet. Ingen opplysninger er sendt.",
+      honeypot: "La dette feltet stå tomt",
+      noScript: "JavaScript må være aktivert for å sende en forespørsel. Ingen opplysninger er sendt.",
       submit: "Send forespørsel",
-      pending: "Kontrollerer opplysningene …",
+      pending: "Sender forespørselen …",
       errorHeading: "Se over disse feltene",
       errors: {
         required: "Fyll ut dette feltet.", email: "Skriv en e-postadresse, for eksempel navn@domene.no.",
@@ -33,65 +43,29 @@ export const nb = {
         number: "Skriv et positivt tall. Antall rom må være et heltall; areal kan ha opptil to desimaler.",
         choice: "Velg eller skriv en gyldig verdi.", tooLong: "Teksten er for lang. Forkort innholdet i feltet.",
       },
-      unavailable: "Ikke sendt ennå. Opplysningene er kontrollert, men innsending er ikke tilkoblet. Ingenting er levert eller lagret.",
-      failure: "Kontrollen kunne ikke fullføres. Forespørselen er ikke levert til Vasky. Opplysningene står fortsatt i skjemaet. Prøv igjen.",
+      success: "Takk. Forespørselen din er sendt til Vasky. Dette er ikke en bekreftet bestilling.",
+      failure: "Vi kunne ikke bekrefte at forespørselen ble sendt. Opplysningene står fortsatt i skjemaet. Prøv igjen.",
     },
     help: { heading: "Usikker på hva du trenger?", contact: "Se kontaktsiden", services: "Utforsk tjenestene" },
   },
   contact: {
-    intro: {
-      eyebrow: "Kontakt",
-      heading: "La oss snakke om renholdet du trenger",
-      description: "Har du spørsmål om renhold til hjemmet eller arbeidsplassen? Her finner du veien videre.",
-      primaryAction: "Be om tilbud",
+    "intro": {
+      "eyebrow": "Kontakt",
+      "heading": "Kontakt Vasky",
+      "description": "Har du spørsmål om renhold? Send oss en e-post."
     },
-    options: {
-      eyebrow: "Start med behovet ditt",
-      heading: "Et tilbud eller et spørsmål?",
-      quote: {
-        heading: "Be om tilbud",
-        description: "For deg som vet at du ønsker renhold og kan beskrive oppdraget.",
-        action: "Gå til tilbudssiden",
-      },
-      enquiry: {
-        heading: "Generelle spørsmål",
-        description: "For deg som har spørsmål om tjenestene eller er usikker på hva slags renhold som passer.",
-        action: "Se kontaktopplysninger",
-      },
-    },
-    guidance: {
-      eyebrow: "Nyttig å ha med",
-      heading: "Gi oss et bilde av behovet",
-      description: "Ta gjerne med det som er relevant for deg. Du trenger ikke ha alle detaljene klare.",
-      items: [
-        { id: "space", title: "Stedet og typen renhold", description: "Fortell om det gjelder et hjem eller en arbeidsplass, og hva slags rengjøring du ser for deg." },
-        { id: "size", title: "Omtrentlig størrelse", description: "Areal og antall rom kan være nyttig, gjerne med litt informasjon om kjøkken og bad der det er relevant." },
-        { id: "timing", title: "Hyppighet og ønsket tidspunkt", description: "Nevn om du ønsker hjelp én gang eller regelmessig, og om du har en ønsket dato eller periode." },
-        { id: "attention", title: "Det du vil prioritere", description: "Beskriv gjerne områder eller oppgaver som trenger ekstra oppmerksomhet, og eventuelle særlige ønsker." },
-        { id: "access", title: "Praktiske hensyn", description: "Nevn gjerne forhold ved adkomsten eller stedet som kan påvirke arbeidet." },
-      ],
-    },
-    business: {
-      eyebrow: "Kontakt- og virksomhetsopplysninger",
-      heading: "Kontaktinformasjon og virksomhetsopplysninger",
-      pending: "Verifiserte kontakt- og virksomhetsopplysninger publiseres her før lansering. Det er foreløpig ikke mulig å sende inn henvendelser eller tilbudsforespørsler på nettstedet.",
-      details: [],
-    },
-    quote: {
-      eyebrow: "Neste steg",
-      heading: "Har du allerede oversikt over behovet?",
-      description: "Gå videre til tilbudssiden, eller se nærmere på tjenestene våre.",
-      primaryAction: "Be om tilbud",
-      secondaryAction: "Se våre tjenester",
-    },
+    "quote": {
+      "heading": "Ønsker du et tilbud?",
+      "description": "Bruk tilbudsskjemaet for å sende opplysninger om renholdet du ønsker.",
+      "action": "Be om tilbud"
+    }
   },
   pricing: {
   "intro": {
     "eyebrow": "Priser",
-    "heading": "Priser for rene rom",
-    "description": "Her finner du timepriser for husvask og vindusvask, fastpriser for flyttevask og priser på tilleggstjenester. Se hva som inngår, og fortell oss hva du trenger hjelp med.",
+    "heading": "Priser på renhold",
+    "description": "Se timepriser for husvask og vindusvask, fastpriser for flyttevask og hva som inngår. Prisene nedenfor gjelder renhold av boliger.",
     "primaryAction": "Be om tilbud",
-    "secondaryAction": "Kontakt oss"
   },
   "hourlyUnit": "per time",
   "home": {
@@ -201,228 +175,154 @@ export const nb = {
       "Utvendig vindusvask der vinduene er trygt tilgjengelige"
     ]
   },
-  "context": {
-    "heading": "Avklar behovet med oss",
-    "description": "Renholdsbehov varierer med boligen og tilstanden. Tidsanslagene for husvask er veiledende. Fortell oss om ekstra behov, prioriteringer eller forhold ved adkomsten, så kan vi avklare omfanget sammen."
-  },
   "quote": {
-    "eyebrow": "Neste steg",
-    "heading": "Hva trenger du hjelp med?",
-    "description": "Beskriv boligen og renholdet du ønsker, så har vi et utgangspunkt for å avklare oppdraget.",
-    "primaryAction": "Be om tilbud",
-    "secondaryAction": "Kontakt oss"
-  }
+      "eyebrow": "Be om tilbud",
+      "heading": "Ønsker du et tilbud på renhold?",
+      "description": "Send inn opplysninger om boligen og tjenesten du ønsker.",
+      "primaryAction": "Be om tilbud",
+      "secondaryAction": "Kontakt oss"
+    }
 },
   about: {
   "intro": {
     "eyebrow": "Om Vasky",
     "heading": "Renhold handler også om tillit.",
     "description": "Vi startet Vasky med en ambisjon om å ta med oss omtanken og sansen for detaljer fra hotellverdenen til hjemmene og bedriftene vi besøker. For oss handler det om nøye renhold, tydelig kommunikasjon og respekt for eiendommen din.",
-    "primaryAction": "Be om tilbud",
     "secondaryAction": "Se våre tjenester"
   },
   "principles": {
-    "eyebrow": "Slik ønsker vi å jobbe",
-    "heading": "Et godt samarbeid starter med forståelse.",
-    "description": "Disse prinsippene beskriver hvordan vi ønsker å møte deg og arbeidet du trenger hjelp med.",
-    "items": [
-      {
-        "id": "communication",
-        "title": "Tydelig kommunikasjon",
-        "description": "Vi ønsker å gjøre det lett å forstå hva som er foreslått, hva som er avklart, og hvilke spørsmål som fortsatt står åpne."
-      },
-      {
-        "id": "care",
-        "title": "Grundig arbeid",
-        "description": "Oppmerksomhet på oppgavene og detaljene i det avtalte arbeidet er utgangspunktet vårt for godt renhold."
-      },
-      {
-        "id": "respect",
-        "title": "Respekt for hjem og arbeidsplasser",
-        "description": "Hjemmet og arbeidsplassen din er rom andre bruker og er opptatt av. Vi ønsker å forstå hvilke hensyn som er viktige der."
-      },
-      {
-        "id": "scope",
-        "title": "Avtalt omfang",
-        "description": "En felles forståelse av oppgavene gir et tydeligere grunnlag for samarbeidet. Ønsker om endringer bør avklares før de blir en del av oppdraget."
-      },
-      {
-        "id": "dialogue",
-        "title": "Enkel dialog",
-        "description": "Det skal være rom for å stille spørsmål og forklare egne prioriteringer. Du trenger ikke kjenne alle detaljene om renhold for å ta kontakt."
-      }
-    ]
-  },
-  "expectations": {
-    "eyebrow": "Fra første kontakt til oppdrag",
-    "heading": "En forespørsel er starten på en dialog.",
-    "steps": [
-      {
-        "id": "need",
-        "title": "Du beskriver behovet",
-        "description": "Fortell om boligen eller arbeidsplassen og hva du ønsker hjelp med. Det er også greit å være usikker på hvilken tjeneste som passer."
-      },
-      {
-        "id": "scope",
-        "title": "Vi avklarer omfanget",
-        "description": "Sammen går vi gjennom aktuelle oppgaver, prioriteringer og praktiske hensyn som tilbudet skal bygge på."
-      },
-      {
-        "id": "quote",
-        "title": "Du tar stilling til tilbudet",
-        "description": "Du får et tilbud basert på avklaringene. En forespørsel eller et mottatt tilbud betyr ikke at et oppdrag er bestilt."
-      },
-      {
-        "id": "work",
-        "title": "Arbeidet følger avtalen",
-        "description": "Når du har akseptert tilbudet og vi har avtalt tidspunkt og praktiske detaljer, utføres arbeidet med utgangspunkt i det avklarte omfanget."
-      }
-    ]
-  },
-  "transparency": {
-    "eyebrow": "Åpenhet om virksomheten",
-    "heading": "Tydelig informasjon om hvem du avtaler med.",
-    "description": "Verifiserte virksomhetsopplysninger er ennå ikke publisert her.",
-    "details": "Denne delen er satt av til juridisk selskapsnavn, organisasjonsnummer, kontaktopplysninger og faktisk tjenesteområde. Eventuelle opplysninger om registreringer og forsikring legges bare til når de er bekreftet."
-  },
+      "eyebrow": "Slik ønsker vi å jobbe",
+      "heading": "Omtanke i arbeidet og tydelige avtaler",
+      "description": "Dette legger vi vekt på når vi tar på oss et oppdrag.",
+      "items": [
+        {
+          "id": "communication",
+          "title": "Tydelige avtaler",
+          "description": "Vi går gjennom hvilke oppgaver som skal gjøres. Eventuelle endringer avtaler vi med deg."
+        },
+        {
+          "id": "care",
+          "title": "Grundig arbeid",
+          "description": "Vi legger vekt på detaljene i oppgavene vi har avtalt."
+        },
+        {
+          "id": "respect",
+          "title": "Respekt for eiendommen din",
+          "description": "Vi lytter til ønsker og praktiske hensyn som er viktige for deg."
+        }
+      ]
+    },
   "quote": {
-    "eyebrow": "La oss starte dialogen",
-    "heading": "Fortell oss hva du trenger hjelp med.",
-    "description": "Beskriv renholdet du ønsker, eller ta kontakt hvis du vil avklare noe før du ber om et tilbud.",
-    "primaryAction": "Be om tilbud",
-    "secondaryAction": "Kontakt oss"
-  }
+      "eyebrow": "Ta kontakt",
+      "heading": "Vil du vite mer?",
+      "description": "Spør oss om tjenestene, eller send en forespørsel om tilbud.",
+      "primaryAction": "Be om tilbud",
+      "secondaryAction": "Kontakt oss"
+    }
 },
   services: {
   "intro": {
-    "eyebrow": "Våre tjenester",
-    "heading": "Renhold for ulike behov",
-    "description": "Hva slags renhold trenger du? Omfanget avhenger av boligen eller arbeidsplassen, typen rengjøring og det som er viktig for deg. Her får du en oversikt over tjenestene våre.",
-    "primaryAction": "Be om tilbud",
-    "secondaryAction": "Kontakt oss"
-  },
-  "suitabilityLabel": "Kan passe for deg som",
+      "eyebrow": "Våre tjenester",
+      "heading": "Renhold for hjemmet",
+      "description": "Velg mellom husvask, flyttevask og vindusvask. På prissiden finner du detaljerte oversikter over hva som inngår."
+    },
   "pricingAction": "Se priser og hva som inngår",
   "items": [
-  {
-    "id": "home",
-    "title": "Husvask",
-    "description": "Renhold av hjemmet med utgangspunkt i rommene og behovene dine. Standard husvask omfatter følgende der det er relevant.",
-    "scope": [
-      "Støvtørking av tilgjengelige flater og karmer",
-      "Utvendig rengjøring av kjøkkenflater og kjøkkeninnredning",
-      "Utvendig rengjøring av baderomsinventar og sanitærutstyr",
-      "Støvsuging av møbler, tepper og gulv",
-      "Gulvvask"
-    ],
-    "suitability": "ønsker hjelp med rengjøringen hjemme. Ekstra behov kan diskuteres med oss.",
-    "action": "Be om tilbud på husvask"
-  },
-  {
-    "id": "move-out",
-    "title": "Flyttevask",
-    "description": "Grundig rengjøring som skal gjøre boligen klar for neste eier eller leietaker. Arbeidet kan omfatte følgende der det er relevant og trygt tilgjengelig.",
-    "scope": [
-      "Tørrmopping eller støvtørking av tak og vegger, samt rengjøring av dører, karmer, lister og ventiler, samt utvendig rengjøring av brytere og stikkontakter",
-      "Støvsuging og grundig våtvask av gulv",
-      "Rengjøring av vinduskarmer og vindusvask innvendig og utvendig der det er trygt og tilgjengelig",
-      "Innvendig og utvendig vask av kjøkkenskap og skuffer, samt rengjøring av benkeplater, vaskekum og kraner",
-      "Rengjøring av fliser, vegger, toalett, servant, dusj eller badekar og gulvsluk på bad"
-    ],
-    "suitability": "skal flytte fra en bolig og trenger renhold før overlevering. På prissiden finner du full oversikt over standardomfang, fastpriser og tillegg.",
-    "action": "Be om tilbud på flyttevask"
-  },
-  {
-    "id": "window",
-    "title": "Vindusvask",
-    "description": "Privat vindusvask for eneboliger, rekkehus og leiligheter. Vi avklarer hvilke vinduer som skal vaskes, og hvordan de kan nås.",
-    "scope": [
-      "Innvendig vindusvask",
-      "Utvendig vindusvask der vinduene er trygt tilgjengelige"
-    ],
-    "suitability": "ønsker hjelp med vindusvask hjemme. Utvendige vinduer vaskes bare der tilgangen er trygg.",
-    "action": "Be om tilbud på vindusvask"
-  }
-],
-  "choosing": {
-    "heading": "Usikker på hvilken tjeneste som passer?",
-    "description": "Du trenger ikke velge på forhånd. Beskriv situasjonen din og hva du ønsker hjelp med, så kan vi avklare hvilken type renhold og hvilket omfang som passer før vi gir et tilbud.",
-    "action": "Beskriv behovet ditt"
-  },
-  "process": {
-    "eyebrow": "Slik fungerer en forespørsel",
-    "heading": "Fra behov til avtalt omfang",
-    "steps": [
       {
-        "id": "request",
-        "title": "Beskriv stedet og behovet",
-        "description": "Ta med hva slags bolig eller lokale det gjelder, omtrent hvor stort det er, og hva du ønsker hjelp med."
+        "id": "home",
+        "title": "Husvask",
+        "description": "For deg som ønsker hjelp med rengjøringen hjemme.",
+        "scope": [
+          "Rengjøring av tilgjengelige flater, kjøkken og bad",
+          "Støvsuging og gulvvask"
+        ],
+        "action": "Be om tilbud på husvask"
       },
       {
-        "id": "clarify",
-        "title": "Vi går gjennom detaljene",
-        "description": "Vi avklarer prioriteringer og praktiske forhold, slik at det er tydelig hva tilbudet skal omfatte."
+        "id": "move-out",
+        "title": "Flyttevask",
+        "description": "For deg som skal flytte og vil gjøre boligen klar for overlevering.",
+        "scope": [
+          "Grundig rengjøring av rom, kjøkken og bad",
+          "Vindusvask der vinduene er trygt tilgjengelige"
+        ],
+        "action": "Be om tilbud på flyttevask"
       },
       {
-        "id": "quote",
-        "title": "Vurder tilbudet",
-        "description": "Tilbudet bygger på omfanget vi har avklart. Gå gjennom det og ta opp eventuelle spørsmål før du bestemmer deg."
+        "id": "window",
+        "title": "Vindusvask",
+        "description": "Vindusvask for eneboliger, rekkehus og leiligheter.",
+        "scope": [
+          "Innvendig vindusvask",
+          "Utvendig vindusvask der tilgangen er trygg"
+        ],
+        "action": "Be om tilbud på vindusvask"
       }
-    ]
-  },
-  "quote": {
-    "eyebrow": "Neste steg",
-    "heading": "La oss avklare renholdet ditt",
-    "description": "Send en forespørsel med utgangspunkt i behovet ditt, eller ta kontakt hvis du har spørsmål om tjenestene.",
-    "primaryAction": "Be om tilbud",
-    "secondaryAction": "Kontakt oss"
-  }
+    ],
+  "choosing": {
+      "heading": "Usikker på hva du skal velge?",
+      "description": "Velg «Usikker» i tilbudsskjemaet, så hjelper vi deg videre.",
+      "action": "Gå til tilbudsskjemaet"
+    },
 },
   home: {
     hero: {
-      eyebrow: "For hjem og arbeidsplasser",
+      eyebrow: "Renhold i Oslo og nærliggende områder",
       heading: "Rene rom. Trygge hender.",
-      description: "Husvask, flyttevask og vindusvask med omtanke for rommene dine. Vi legger vekt på detaljene, tydelig kommunikasjon og respekt for eiendommen din.",
+      description: "Husvask, flyttevask og vindusvask med omtanke for hjemmet ditt. Vi legger vekt på grundig arbeid og tydelige avtaler.",
       primaryAction: "Be om tilbud",
       secondaryAction: "Se våre tjenester",
       photoPlaceholder: "Fotografi kommer",
     },
     services: {
       eyebrow: "Våre tjenester",
-      heading: "Renhold tilpasset behovet ditt",
-      description: "Ulike rom og situasjoner krever ulikt renhold. Finn tjenesten som passer det du trenger hjelp til.",
+      heading: "Hva vil du ha hjelp med?",
+      description: "Her er våre tre tjenester for hjemmet. Se hva de omfatter, og finn priser på prissiden.",
       items: [
-        { id: "home", title: "Husvask", description: "Renhold i hjemmet, med utgangspunkt i rommene du bruker og behovene du har." },
-        { id: "move-out", title: "Flyttevask", description: "Renhold ved flytting. Vi avklarer boligen og omfanget av oppdraget sammen." },
-        { id: "window", title: "Vindusvask", description: "Privat vindusvask for eneboliger, rekkehus og leiligheter, innvendig og utvendig der det er trygt tilgjengelig." },
-      ],
-    },
-    principles: {
-      eyebrow: "Slik ønsker vi å jobbe",
-      heading: "Godt renhold begynner med en god avklaring.",
-      description: "For oss handler renhold om både arbeidet som gjøres og dialogen rundt det. Disse prinsippene er utgangspunktet vårt.",
-      items: [
-        { id: "communication", title: "Tydelig kommunikasjon", description: "En felles forståelse av hva som skal gjøres, og hva som er viktig for deg." },
-        { id: "care", title: "Grundig arbeid", description: "Oppmerksomhet på detaljene og oppgavene vi har avtalt." },
-        { id: "request", title: "En enkel start", description: "Du beskriver behovet. Vi tar dialogen videre og avklarer spørsmålene sammen." },
-        { id: "needs", title: "Dine behov som utgangspunkt", description: "Omfanget av renholdet tar utgangspunkt i rommene, bruken og prioriteringene dine." },
+        {
+          "id": "home",
+          "title": "Husvask",
+          "description": "Rengjøring av rom, kjøkken og bad i hjemmet ditt."
+        },
+        {
+          "id": "move-out",
+          "title": "Flyttevask",
+          "description": "Grundig rengjøring av boligen før overlevering til neste eier eller leietaker."
+        },
+        {
+          "id": "window",
+          "title": "Vindusvask",
+          "description": "Vask av vinduer hjemme, innvendig og utvendig der tilgangen er trygg."
+        }
       ],
     },
     process: {
       eyebrow: "Fra forespørsel til tilbud",
-      heading: "Tre steg til et avklart oppdrag.",
+      heading: "Slik får du et tilbud",
       steps: [
-        { id: "request", title: "Send forespørsel", description: "Fortell oss hva slags renhold du trenger, og litt om boligen eller lokalene." },
-        { id: "clarify", title: "Vi avklarer behovet", description: "Sammen går vi gjennom omfang, ønsker og praktiske detaljer." },
-        { id: "quote", title: "Du mottar et tilbud", description: "Du får et tilbud basert på det vi har avklart, som du kan ta stilling til." },
+        {
+          "id": "request",
+          "title": "Send en forespørsel",
+          "description": "Fyll ut tilbudsskjemaet med det du vet om oppdraget."
+        },
+        {
+          "id": "clarify",
+          "title": "Vi går gjennom detaljene",
+          "description": "Vi tar kontakt om oppgaver, tidspunkt og praktiske hensyn."
+        },
+        {
+          "id": "quote",
+          "title": "Vurder tilbudet",
+          "description": "Du får et tilbud å ta stilling til. En forespørsel er ikke en bestilling."
+        }
       ],
     },
     quote: {
-      eyebrow: "La oss begynne med behovet ditt",
-      heading: "Hva trenger du hjelp med?",
-      description: "Fortell oss om renholdet du ønsker. Vi tar utgangspunkt i det du trenger når vi avklarer oppdraget.",
-      primaryAction: "Be om tilbud",
-      secondaryAction: "Kontakt oss",
+      "eyebrow": "Be om tilbud",
+      "heading": "Klar for å få hjelp med renholdet?",
+      "description": "Send en forespørsel, eller ta kontakt hvis du har spørsmål.",
+      "primaryAction": "Be om tilbud",
+      "secondaryAction": "Kontakt oss"
     },
   },
   shell: {
@@ -454,6 +354,6 @@ export const nb = {
     pricing: { heading: "Priser", title: "Priser | Vasky", description: "Se timepriser for husvask og vindusvask, fastpriser for flyttevask og priser på tilleggstjenester hos Vasky." },
     about: { heading: "Om oss", title: "Om oss | Vasky", description: "Les om Vaskys tilnærming til renhold: tydelig kommunikasjon, respekt for hjem og arbeidsplasser og et avklart omfang før oppdraget." },
     contact: { heading: "Kontakt", title: "Kontakt | Vasky", description: "Forbered en henvendelse om renhold til Vasky. Se hvilke opplysninger som er nyttige, og hvordan behov og praktiske detaljer avklares." },
-    quote: { heading: "Be om tilbud", title: "Be om tilbud | Vasky", description: "Beskriv renholdet du ønsker og de viktigste opplysningene om oppdraget. Tilbudsskjemaet er under utprøving; innsending er ikke tilkoblet ennå." },
+    quote: { heading: "Be om tilbud", title: "Be om tilbud | Vasky", description: "Beskriv renholdet du ønsker og de viktigste opplysningene om oppdraget." },
   },
 } satisfies Dictionary;

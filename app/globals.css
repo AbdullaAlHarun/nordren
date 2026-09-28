@@ -345,10 +345,25 @@ h1 {
   gap: var(--space-2) var(--space-4);
 }
 
+.footer-contact {
+  margin-block-start: var(--space-4);
+}
+
+.footer-contact a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target-size);
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  color: var(--brand-primary);
+  text-decoration: underline;
+}
+
 /* Reserve room for the native summary; its panel stays in normal document flow. */
 @media (width < 70rem) {
   .site-header > .container {
     position: relative;
+    container: mobile-header / inline-size;
   }
 
   .site-header .header-row {
@@ -378,6 +393,31 @@ h1 {
     inset-inline-end: var(--gutter);
     inset-block-start: var(--space-3);
 
+  }
+
+  /* Unlike viewport breakpoints, this rem threshold follows root text resizing. */
+  @container mobile-header (width < 16rem) {
+    .site-header .header-row {
+      flex-wrap: wrap;
+      padding-inline-end: 0;
+    }
+
+    /* Keep the logo clear of the summary without shrinking either text or targets. */
+    .site-header .header-row > .brand-link {
+      max-width: calc(100% - var(--target-size) - var(--space-1));
+    }
+
+    .site-header .brand-logo {
+      max-width: 100%;
+    }
+
+    .site-header .language-switcher {
+      flex-basis: 100%;
+    }
+
+    .site-header .language-list {
+      justify-content: flex-end;
+    }
   }
 }
 /* Keep the disclosure until both languages have room for all desktop controls. */

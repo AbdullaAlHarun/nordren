@@ -8,7 +8,7 @@ import { routes } from "@/lib/i18n/routes";
 import styles from "./about.module.css";
 
 export function AboutPage({ locale }: { locale: Locale }) {
-  const content = getDictionary(locale).about;
+  const { about: content, business } = getDictionary(locale);
 
   return (
     <SiteShell locale={locale} page="about">
@@ -17,8 +17,8 @@ export function AboutPage({ locale }: { locale: Locale }) {
           <p className={sharedStyles.eyebrow}>{content.intro.eyebrow}</p>
           <h1 id="about-heading" className={styles.heading}>{content.intro.heading}</h1>
           <p className={styles.introText}>{content.intro.description}</p>
+          <p className={styles.notice}>{business.serviceArea}</p>
           <div className={styles.actions}>
-            <ButtonLink href={routes.quote[locale]}>{content.intro.primaryAction}</ButtonLink>
             <ButtonLink href={routes.services[locale]} variant="text">{content.intro.secondaryAction}</ButtonLink>
           </div>
         </section>
@@ -37,31 +37,6 @@ export function AboutPage({ locale }: { locale: Locale }) {
               </div>
             ))}
           </dl>
-        </section>
-
-        <section className={styles.editorial} aria-labelledby="expectations-heading">
-          <div>
-            <p className={sharedStyles.eyebrow}>{content.expectations.eyebrow}</p>
-            <h2 id="expectations-heading">{content.expectations.heading}</h2>
-          </div>
-          <ol className={styles.steps} role="list">
-            {content.expectations.steps.map((step, index) => (
-              <li key={step.id}>
-                <span className={styles.number} aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </section>
-
-        <section className={styles.transparency} aria-labelledby="transparency-heading">
-          <p className={sharedStyles.eyebrow}>{content.transparency.eyebrow}</p>
-          <h2 id="transparency-heading">{content.transparency.heading}</h2>
-          <p className={styles.notice}>{content.transparency.description}</p>
-          <p className={styles.details}>{content.transparency.details}</p>
         </section>
 
         <QuoteCTA content={content.quote} locale={locale} />

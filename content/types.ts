@@ -14,6 +14,14 @@ type HomepageItem = {
   description: string;
 };
 
+type PageIntro = {
+  eyebrow: string;
+  heading: string;
+  description: string;
+};
+
+type WorkingPrinciples = PageIntro & { items: readonly HomepageItem[] };
+
 export type HomeContent = {
   hero: {
     eyebrow: string;
@@ -24,12 +32,6 @@ export type HomeContent = {
     photoPlaceholder: string;
   };
   services: {
-    eyebrow: string;
-    heading: string;
-    description: string;
-    items: readonly HomepageItem[];
-  };
-  principles: {
     eyebrow: string;
     heading: string;
     description: string;
@@ -56,41 +58,26 @@ export type ServiceScope = {
 };
 
 export type ServicesContent = {
-  intro: HomeContent["quote"];
-  suitabilityLabel: string;
+  intro: PageIntro;
   pricingAction: string;
   items: readonly {
     id: "home" | "move-out" | "window";
     title: string;
     description: string;
-    suitability: string;
     scope: readonly string[];
     action: string;
   }[];
   choosing: { heading: string; description: string; action: string };
-  process: HomeContent["process"];
-  quote: HomeContent["quote"];
 };
 
 export type AboutContent = {
-  intro: HomeContent["quote"];
-  principles: HomeContent["principles"];
-  expectations: {
-    eyebrow: string;
-    heading: string;
-    steps: readonly [HomepageItem, HomepageItem, HomepageItem, HomepageItem];
-  };
-  transparency: {
-    eyebrow: string;
-    heading: string;
-    description: string;
-    details: string;
-  };
+  intro: PageIntro & { secondaryAction: string };
+  principles: WorkingPrinciples;
   quote: HomeContent["quote"];
 };
 
 export type PricingContent = {
-  intro: HomeContent["quote"];
+  intro: PageIntro & { primaryAction: string };
   hourlyUnit: string;
   home: {
     heading: string;
@@ -116,26 +103,12 @@ export type PricingContent = {
     parkingNote: string;
   };
   window: { heading: string; description: string; items: readonly string[] };
-  context: { heading: string; description: string };
   quote: HomeContent["quote"];
 };
 
 export type ContactContent = {
-  intro: Omit<HomeContent["quote"], "secondaryAction">;
-  options: {
-    eyebrow: string;
-    heading: string;
-    quote: { heading: string; description: string; action: string };
-    enquiry: { heading: string; description: string; action: string };
-  };
-  guidance: HomeContent["principles"];
-  business: {
-    eyebrow: string;
-    heading: string;
-    pending: string;
-    details: readonly { id: string; label: string; value: string }[];
-  };
-  quote: HomeContent["quote"];
+  intro: PageIntro;
+  quote: { heading: string; description: string; action: string };
 };
 
 export type QuoteContent = {
@@ -151,19 +124,25 @@ export type QuoteContent = {
     choose: string;
     helpers: { details: string; timing: string };
     expectation: string;
-    development: string;
+    honeypot: string;
     noScript: string;
     submit: string;
     pending: string;
     errorHeading: string;
     errors: Record<QuoteError, string>;
-    unavailable: string;
+    success: string;
     failure: string;
   };
   help: { heading: string; contact: string; services: string };
 };
 
 export type Dictionary = {
+  business: {
+    emailLabel: string;
+    areaLabel: string;
+    serviceArea: string;
+    commercial: { heading: string; description: string; action: string };
+  };
   quote: QuoteContent;
   contact: ContactContent;
   pricing: PricingContent;

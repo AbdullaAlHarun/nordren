@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getDictionary } from "@/content";
+import { publicEmail } from "@/content/business";
 import { Navigation } from "@/components/navigation";
 import type { Locale } from "@/lib/i18n/locales";
 import { routes, type PageId } from "@/lib/i18n/routes";
@@ -21,6 +22,9 @@ export function Footer({ locale, page }: { locale: Locale; page: PageId }) {
           />
         </a>
         <Navigation locale={locale} page={page} placement="footer" />
+      </div>
+      <div className="container footer-contact">
+        <a href={`mailto:${publicEmail}`}>{publicEmail}</a>
       </div>
     </footer>
   );

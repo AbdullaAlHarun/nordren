@@ -1,16 +1,15 @@
 import { ButtonLink } from "@/components/button";
-import { QuoteCTA } from "@/components/home/quote-cta";
 import sharedStyles from "@/components/home/home.module.css";
 import editorialStyles from "@/components/about/about.module.css";
 import { SiteShell } from "@/components/site-shell";
 import { getDictionary } from "@/content";
-import type { ContactContent } from "@/content/types";
+import { publicEmail } from "@/content/business";
 import type { Locale } from "@/lib/i18n/locales";
 import { routes } from "@/lib/i18n/routes";
 import styles from "./contact.module.css";
 
 export function ContactPage({ locale }: { locale: Locale }) {
-  const content: ContactContent = getDictionary(locale).contact;
+  const { contact: content, business } = getDictionary(locale);
 
   return (
     <SiteShell locale={locale} page="contact">
@@ -19,62 +18,37 @@ export function ContactPage({ locale }: { locale: Locale }) {
           <p className={sharedStyles.eyebrow}>{content.intro.eyebrow}</p>
           <h1 id="contact-heading" className={editorialStyles.heading}>{content.intro.heading}</h1>
           <p className={editorialStyles.introText}>{content.intro.description}</p>
-          <div className={editorialStyles.actions}>
-            <ButtonLink href={routes.quote[locale]}>{content.intro.primaryAction}</ButtonLink>
-          </div>
-        </section>
-
-        <section className={editorialStyles.editorial} aria-labelledby="options-heading">
-          <div>
-            <p className={sharedStyles.eyebrow}>{content.options.eyebrow}</p>
-            <h2 id="options-heading">{content.options.heading}</h2>
-          </div>
-          <div className={styles.options}>
+          <dl className={styles.contactDetails}>
             <div>
-              <h3>{content.options.quote.heading}</h3>
-              <p>{content.options.quote.description}</p>
-              <ButtonLink href={routes.quote[locale]} variant="text">{content.options.quote.action}</ButtonLink>
+              <dt>{business.emailLabel}</dt>
+              <dd><a className={styles.email} href={`mailto:${publicEmail}`}>{publicEmail}</a></dd>
             </div>
             <div>
-              <h3>{content.options.enquiry.heading}</h3>
-              <p>{content.options.enquiry.description}</p>
-              <ButtonLink href={`${routes.contact[locale]}#contact-details`} variant="text">{content.options.enquiry.action}</ButtonLink>
+              <dt>{business.areaLabel}</dt>
+              <dd>{business.serviceArea}</dd>
             </div>
-          </div>
-        </section>
-
-        <section className={editorialStyles.editorial} aria-labelledby="guidance-heading">
-          <div>
-            <p className={sharedStyles.eyebrow}>{content.guidance.eyebrow}</p>
-            <h2 id="guidance-heading">{content.guidance.heading}</h2>
-            <p className={sharedStyles.description}>{content.guidance.description}</p>
-          </div>
-          <dl className={editorialStyles.principles}>
-            {content.guidance.items.map((item) => (
-              <div key={item.id}>
-                <dt>{item.title}</dt>
-                <dd>{item.description}</dd>
-              </div>
-            ))}
           </dl>
         </section>
 
-        <section id="contact-details" tabIndex={-1} className={editorialStyles.transparency} aria-labelledby="business-heading">
-          <p className={sharedStyles.eyebrow}>{content.business.eyebrow}</p>
-          <h2 id="business-heading">{content.business.heading}</h2>
-          {content.business.details.length > 0 ? (
-            <dl className={editorialStyles.principles}>
-              {content.business.details.map((detail) => (
-                <div key={detail.id}>
-                  <dt>{detail.label}</dt>
-                  <dd>{detail.value}</dd>
-                </div>
-              ))}
-            </dl>
-          ) : <p className={editorialStyles.details}>{content.business.pending}</p>}
+        <section className={editorialStyles.editorial} aria-labelledby="contact-quote-heading">
+          <h2 id="contact-quote-heading">{content.quote.heading}</h2>
+          <div>
+            <p className={sharedStyles.description}>{content.quote.description}</p>
+            <div className={editorialStyles.actions}>
+              <ButtonLink href={routes.quote[locale]}>{content.quote.action}</ButtonLink>
+            </div>
+          </div>
         </section>
 
-        <QuoteCTA content={content.quote} locale={locale} secondaryPage="services" />
+        <section className={editorialStyles.editorial} aria-labelledby="commercial-heading">
+          <h2 id="commercial-heading">{business.commercial.heading}</h2>
+          <div>
+            <p className={sharedStyles.description}>{business.commercial.description}</p>
+            <div className={editorialStyles.actions}>
+              <ButtonLink href={`mailto:${publicEmail}`} variant="text">{business.commercial.action}</ButtonLink>
+            </div>
+          </div>
+        </section>
       </div>
     </SiteShell>
   );

@@ -44,7 +44,6 @@ export function PricingPage({ locale }: { locale: Locale }) {
           <p className={editorialStyles.introText}>{content.intro.description}</p>
           <div className={editorialStyles.actions}>
             <ButtonLink href={routes.quote[locale]}>{content.intro.primaryAction}</ButtonLink>
-            <ButtonLink href={routes.contact[locale]} variant="text">{content.intro.secondaryAction}</ButtonLink>
           </div>
         </section>
 
@@ -126,10 +125,6 @@ export function PricingPage({ locale }: { locale: Locale }) {
           </div>
         </section>
 
-        <section className={editorialStyles.transparency} aria-labelledby="pricing-context-heading">
-          <h2 id="pricing-context-heading">{content.context.heading}</h2>
-          <p className={styles.note}>{content.context.description}</p>
-        </section>
         <QuoteCTA content={content.quote} locale={locale} />
       </div>
     </SiteShell>

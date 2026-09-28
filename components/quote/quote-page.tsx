@@ -18,7 +18,7 @@ export function QuotePage({ locale }: { locale: Locale }) {
           <h1 id="quote-page-heading" className={editorial.heading}>{content.intro.heading}</h1>
           <p className={editorial.introText}>{content.intro.description}</p>
         </section>
-        <QuoteForm content={content.form} />
+        <QuoteForm content={content.form} locale={locale} />
         <section className={styles.help} aria-labelledby="help-heading">
           <h2 id="help-heading">{content.help.heading}</h2>
           <div className={editorial.actions}>

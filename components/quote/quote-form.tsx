@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useSyncExternalStore, type FormEvent } from "react";
 import { Button } from "@/components/button";
 import type { QuoteContent } from "@/content/types";
+import type { Locale } from "@/lib/i18n/locales";
 import { fieldLimits, frequencyOptions, quoteFields, serviceOptions, validateQuote, type QuoteErrors, type QuoteField, type QuoteValues } from "@/lib/quote-validation";
 import styles from "./quote.module.css";
 
@@ -10,7 +11,7 @@ const subscribe = () => () => {};
 const clientReady = () => true;
 const serverReady = () => false;
 
-export function QuoteForm({ content }: { content: QuoteContent["form"] }) {
+export function QuoteForm({ content, locale }: { content: QuoteContent["form"]; locale: Locale }) {
   // Keep submission disabled until JavaScript can intercept it; never fall back to a GET with personal data.
   const ready = useSyncExternalStore(subscribe, clientReady, serverReady);
   const [pending, setPending] = useState(false);
@@ -19,11 +20,13 @@ export function QuoteForm({ content }: { content: QuoteContent["form"] }) {
   const [attempt, setAttempt] = useState(0);
   const resultRef = useRef<HTMLDivElement>(null);
   const submitting = useRef(false);
+  const submission = useRef({ payload: "", id: "" });
   useEffect(() => { if (attempt) resultRef.current?.focus(); }, [attempt]);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (submitting.current) return;
+    const form = event.currentTarget;
     const data = new FormData(event.currentTarget);
     const values = Object.fromEntries(quoteFields.map(field => [field, String(data.get(field) ?? "")])) as QuoteValues;
     const localErrors = validateQuote(values);
@@ -33,15 +36,20 @@ export function QuoteForm({ content }: { content: QuoteContent["form"] }) {
     submitting.current = true;
     setPending(true);
     try {
+      const payload = JSON.stringify({ ...values, locale, website: String(data.get("website") ?? "") });
+      // Reuse the ID on unchanged retries if the provider accepted a request whose response was lost.
+      if (submission.current.payload !== payload) submission.current = { payload, id: crypto.randomUUID() };
       const response = await fetch("/api/quote/validate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        body: JSON.stringify({ ...JSON.parse(payload), submissionId: submission.current.id }),
         signal: AbortSignal.timeout(15000),
       });
       const result: unknown = await response.json();
-      if (response.ok && result && typeof result === "object" && "status" in result && result.status === "delivery-unavailable") {
-        setNotice(content.unavailable);
+      if (response.ok && result && typeof result === "object" && "status" in result && result.status === "sent") {
+        setNotice(content.success);
+        form.reset();
+        submission.current = { payload: "", id: "" };
       } else if (response.status === 422 && result && typeof result === "object" && "errors" in result && result.errors && typeof result.errors === "object") {
         const serverErrors: QuoteErrors = {};
         for (const name of quoteFields) {
@@ -93,8 +101,11 @@ export function QuoteForm({ content }: { content: QuoteContent["form"] }) {
     <form className={styles.form} onSubmit={submit} noValidate aria-labelledby="form-heading">
       <h2 id="form-heading">{content.heading}</h2>
       <p className={styles.helper}>{content.requiredNote}</p>
-      <p className={styles.development}>{content.development}</p>
       <noscript><p className={styles.development}>{content.noScript}</p></noscript>
+      <div hidden aria-hidden="true">
+        <label htmlFor="quote-website">{content.honeypot}</label>
+        <input id="quote-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
       {(Object.keys(errors).length > 0 || notice) && (
         <div ref={resultRef} tabIndex={-1} className={styles.result}>
           {Object.keys(errors).length > 0 ? <>

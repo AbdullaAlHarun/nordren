@@ -1,21 +1,24 @@
-.options > div {
-  padding-block: var(--space-6);
-  border-top: 1px solid var(--border-subtle);
+.contactDetails {
+  display: grid;
+  gap: var(--space-5);
+  margin-block-start: var(--space-6);
 }
 
-.options > div:first-child {
-  border-color: var(--border);
+.contactDetails dt {
+  font-weight: 500;
 }
 
-.options p {
-  max-width: 55ch;
-  margin-block: var(--space-3);
-  color: var(--text-muted);
+.contactDetails dd {
+  margin-block-start: var(--space-2);
 }
 
-.options a {
-  padding-inline: 0;
-  justify-content: flex-start;
-  text-align: start;
+.email {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target-size);
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-size: 1.1875rem;
   color: var(--brand-primary);
+  text-decoration: underline;
 }
