@@ -60,29 +60,23 @@
   margin-block-start: var(--space-8);
 }
 
-.photoSpace {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.heroPhoto,
+.servicePhoto {
+  position: relative;
   min-width: 0;
-  aspect-ratio: 2.5;
-  padding: var(--space-5);
+  aspect-ratio: 3 / 2;
   background: var(--surface);
-  color: var(--brand-primary);
-  border: 1px solid var(--border-subtle);
 }
 
-.photoBrand {
-  font-size: 1.25rem;
-  letter-spacing: -0.035em;
-  font-weight: 500;
+.heroImage,
+.serviceImage {
+  object-fit: cover;
+  border-radius: var(--radius-small);
 }
 
-.photoCaption {
-  margin-block-start: var(--space-8);
-  border-top: 1px solid var(--border);
-  padding-block-start: var(--space-3);
-  font-size: var(--text-small);
+.heroImage {
+  /* Preserve the cleaner's body, gloved hand and vacuum head in the wider source. */
+  object-position: 75% center;
 }
 
 .services {
@@ -105,6 +99,9 @@
 }
 
 .service {
+  display: grid;
+  gap: var(--space-4);
+  align-items: center;
   padding-block: var(--space-4) var(--space-6);
   border-bottom: 1px solid var(--border-subtle);
 }
@@ -229,14 +226,8 @@
 }
 
 @media (min-width: 48rem) {
-  .hero {
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.85fr);
-    gap: clamp(2rem, 5vw, 5rem);
-  }
-
-  .photoSpace {
-    aspect-ratio: 0.8;
-    padding: var(--space-8);
+  .heroPhoto {
+    aspect-ratio: 2 / 1;
   }
 
   .services {
@@ -269,6 +260,20 @@
 }
 
 @media (min-width: 64rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: clamp(2rem, 5vw, 5rem);
+  }
+
+  .heroPhoto {
+    aspect-ratio: 3 / 2;
+  }
+
+  .service {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: var(--space-6);
+  }
+
   .quote {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;

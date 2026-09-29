@@ -29,13 +29,16 @@ export type HomeContent = {
     description: string;
     primaryAction: string;
     secondaryAction: string;
-    photoPlaceholder: string;
+    imageAlt: string;
   };
   services: {
     eyebrow: string;
     heading: string;
     description: string;
-    items: readonly HomepageItem[];
+    items: readonly (Omit<HomepageItem, "id"> & {
+      id: "home" | "move-out" | "window";
+      imageAlt: string;
+    })[];
   };
   process: {
     eyebrow: string;

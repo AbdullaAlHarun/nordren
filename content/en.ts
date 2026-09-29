@@ -272,7 +272,7 @@ export const en = {
       description: "Home cleaning, move-out cleaning and window cleaning with care for your home. We focus on thorough work and clear agreements.",
       primaryAction: "Request a quote",
       secondaryAction: "Explore our services",
-      photoPlaceholder: "Photography to follow",
+      imageAlt: "A cleaner vacuuming a rug in a bright living room.",
     },
     services: {
       eyebrow: "Our services",
@@ -282,17 +282,20 @@ export const en = {
         {
           "id": "home",
           "title": "Home cleaning",
-          "description": "Cleaning for the rooms, kitchen and bathrooms in your home."
+          "description": "Cleaning for the rooms, kitchen and bathrooms in your home.",
+          "imageAlt": "A cleaner mopping a wooden floor in a bright living room."
         },
         {
           "id": "move-out",
           "title": "Move-out cleaning",
-          "description": "A thorough clean before handing over your home to its next owner or tenant."
+          "description": "A thorough clean before handing over your home to its next owner or tenant.",
+          "imageAlt": "A cleaned living room with wood-panelled walls, sofas and a coffee table."
         },
         {
           "id": "window",
           "title": "Window cleaning",
-          "description": "Window cleaning for your home, inside and outside where access is safe."
+          "description": "Window cleaning for your home, inside and outside where access is safe.",
+          "imageAlt": "A cleaner washing a window with a squeegee."
         }
       ],
     },

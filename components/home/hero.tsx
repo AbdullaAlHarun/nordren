@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ButtonLink } from "@/components/button";
 import type { HomeContent } from "@/content/types";
 import type { Locale } from "@/lib/i18n/locales";
@@ -16,10 +17,15 @@ export function Hero({ content, locale }: { content: HomeContent["hero"]; locale
           <ButtonLink href={routes.services[locale]} variant="text">{content.secondaryAction}</ButtonLink>
         </div>
       </div>
-      {/* Reserved for authentic photography. No image or business information is implied. */}
-      <div className={styles.photoSpace} aria-hidden="true">
-        <span className={styles.photoBrand}>Vasky</span>
-        <span className={styles.photoCaption}>{content.photoPlaceholder}</span>
+      <div className={styles.heroPhoto}>
+        <Image
+          src="/images/vasky-hero.jpg"
+          alt={content.imageAlt}
+          fill
+          preload
+          sizes="(min-width: 75rem) 550px, (min-width: 64rem) 46vw, (min-width: 25rem) 92vw, calc(100vw - 2rem)"
+          className={styles.heroImage}
+        />
       </div>
     </section>
   );

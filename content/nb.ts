@@ -272,7 +272,7 @@ export const nb = {
       description: "Husvask, flyttevask og vindusvask med omtanke for hjemmet ditt. Vi legger vekt på grundig arbeid og tydelige avtaler.",
       primaryAction: "Be om tilbud",
       secondaryAction: "Se våre tjenester",
-      photoPlaceholder: "Fotografi kommer",
+      imageAlt: "Renholder støvsuger et teppe i en lys stue.",
     },
     services: {
       eyebrow: "Våre tjenester",
@@ -282,17 +282,20 @@ export const nb = {
         {
           "id": "home",
           "title": "Husvask",
-          "description": "Rengjøring av rom, kjøkken og bad i hjemmet ditt."
+          "description": "Rengjøring av rom, kjøkken og bad i hjemmet ditt.",
+          "imageAlt": "Renholder vasker tregulvet i en lys stue."
         },
         {
           "id": "move-out",
           "title": "Flyttevask",
-          "description": "Grundig rengjøring av boligen før overlevering til neste eier eller leietaker."
+          "description": "Grundig rengjøring av boligen før overlevering til neste eier eller leietaker.",
+          "imageAlt": "Rengjort stue med trepanel, sofaer og salongbord."
         },
         {
           "id": "window",
           "title": "Vindusvask",
-          "description": "Vask av vinduer hjemme, innvendig og utvendig der tilgangen er trygg."
+          "description": "Vask av vinduer hjemme, innvendig og utvendig der tilgangen er trygg.",
+          "imageAlt": "Renholder vasker et vindu med nal."
         }
       ],
     },
